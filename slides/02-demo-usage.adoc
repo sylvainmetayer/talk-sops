@@ -1,0 +1,31 @@
+== Chiffrement
+
+sops -e --age PUB_KEY plaintext.yaml > secrets.yaml
+
+=== Chiffrement partiel
+
+[.notes]
+****
+Parfois, on a pas besoin de tout chiffrer
+****
+
+== Déchiffrement
+
+sops -d secrets.yaml
+
+TODO préciser variable env vers clé privée age
+
+=== Démo
+
+TODO démo scriptée :
+
+- Génération clé age (privée/publique)
+- Création fichier
+- Chiffrement fichier
+- Déchiffrement fichier
+
+
+[.notes]
+****
+~5min
+****

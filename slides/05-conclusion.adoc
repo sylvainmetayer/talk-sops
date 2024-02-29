@@ -1,0 +1,14 @@
+== Alternatives
+
+- https://opensource.com/article/19/2/secrets-management-tools-git
+- Vault / AWS Secret Manager : Vendor lock-in
+- Git crypt
+
+[.notes]
+****
+Permet de stocker les secrets avec le code source de manière sécurisée
+****
+
+== Merci !
+
+TODO openfeedback / QR code slides.

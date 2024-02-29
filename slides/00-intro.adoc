@@ -1,0 +1,57 @@
+[%notitle.columns.is-vcentered.transparency]
+== Présentation
+
+[.column.is-one-third]
+--
+image::photo.png[]
+// TODO resize 300*250
+--
+
+[.column.is-3.has-text-left.medium]
+--
+Sylvain
+
+link:https://sylvain.dev[]
+--
+
+[.column]
+--
+[.vertical-align-middle]
+image:logo.png[width=250]
+
+Tech Lead @onepoint
+--
+
+[.notes]
+****
+* this is the new block type for speaker notes: sidebar
+* `notes` role required (written `.notes` in block attribute)
+* source is slightly more compact
+* and not tied to an admonition which can be useful in slides
+****
+
+== Problématique
+
+[.column]
+--
+[.vertical-align-middle]
+image:public-secrets.jpg[alt='Ton pire cauchemar']
+--
+
+[.notes]
+****
+Des secrets à passer à nos applications, pour autant on ne veut pas avoir à les mettre à la main et on veut les centraliser.
+
+Pas de vault / secrets manager
+****
+
+== Cas d'usage
+
+image:public-secrets.jpg[alt='Schéma']
+
+[.notes]
+****
+TODO schéma code <> secret <> app
+
+Exemple : Git <> sops <> argocd
+****

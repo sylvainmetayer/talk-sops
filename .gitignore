@@ -1,0 +1,10 @@
+*.iml
+.idea
+target
+.DS_Store
+reveal.js
+*.html
+.asciidoctor
+!index-docinfo-footer.html
+css/font-awesome.css
+js/hightlight.min.js

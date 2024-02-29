@@ -1,0 +1,98 @@
+[.columns]
+== SOPS
+
+[.column]
+--
+image::logo_sops.png[]
+
+link:https://github.com/getsops/sops[Documentation & Installation]
+--
+
+[.column]
+--
+Installation possible avec link:TODO_SLIDES_ASDF[asdf]
+--
+
+[.notes]
+****
+SOPS permet de chiffrer des données dans un fichier à l'aide de plusieurs méthodes de chiffrements (SOPS, KMS...).
+Alternative viable en cas de non-dispo de vault et/ou autre.
+Facilité d'utilisation pour GitOps
+
+CNCF
+****
+
+=== Structure d'un fichier
+
+==== YAML
+
+// NOTE: Format utilisé par les exemples de cette présentation
+
+[%linenums,yaml]
+----
+include::../code/01-sops-file.yaml[]
+----
+
+[.notes]
+****
+- Clés en clair, contenu chiffré
+- metadata sops incluse dans le fichier, ainsi que les destinataires.
+- un hmac par destinataire + un mac globale de modificaiton et indique version utilisée par sops.
+- Autre formats possible, mais utilisé dans conf pour simplicité : INI JSON ...
+****
+
+== Méthodes de chiffrement
+
+=== Age
+
+INFO: Chiffrement via link:https://github.com/FiloSottile/age[age] pour cette présentation
+
+[.notes]
+****
+Avantage : facile à utiliser
+
+Inconvénient : non centralisé
+****
+
+=== AWS KMS / GCP ...
+
+TODO Exemple + screen utilisation
+
+Préciser autres existent
+
+// [.columns]
+// === Autres formats possibles
+//
+// [.column]
+// --
+// JSON
+//
+// [%linenums,json]
+// ----
+// include::../code/01-sops-file.json[]
+// ----
+//
+// INI
+//
+// [%linenums,ini]
+// ----
+// include::../code/01-sops-file.ini[]
+// ----
+// --
+//
+// [.column]
+// --
+// ENV
+//
+// [%linenums,text]
+// ----
+// include::../code/01-sops-file.env[]
+// ----
+//
+// BINARY
+//
+// [%linenums]
+// ----
+// include::../code/01-sops-file.bin[]
+// ----
+// --
