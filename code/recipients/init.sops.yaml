@@ -1,0 +1,10 @@
+creation_rules:
+  - path_regex: .*\.?dev\.yaml
+    key_groups:
+      - age:
+          - ALICE
+          - BOB
+  - path_regex: .*\.?prod\.yaml
+    key_groups:
+      - age:
+          - ALICE

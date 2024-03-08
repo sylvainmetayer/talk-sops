@@ -1,4 +1,4 @@
-[%notitle.columns.is-vcentered.transparency]
+[.columns.is-vcentered.transparency]
 == Présentation
 
 [.column.is-one-third]
@@ -47,11 +47,17 @@ Pas de vault / secrets manager
 
 == Cas d'usage
 
-image:public-secrets.jpg[alt='Schéma']
+Où persister la valeur des secrets ?
+
+plantuml::diagrams/01-problematique.puml[format=svg]
+
 
 [.notes]
 ****
-TODO schéma code <> secret <> app
+- Directement sur le cloud provider, mais cela nécessite configuration manuelle
+- à la main dans l'application ?
+- Dans un Vault ? Si non existant, c'est une brique en plus à maintenir
+- Dans le code source, ça serait bien ? SOPS
 
 Exemple : Git <> sops <> argocd
 ****

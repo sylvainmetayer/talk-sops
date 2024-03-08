@@ -1,0 +1,36 @@
+@startuml
+title Déploiement d'une application
+
+actor Développeur
+artifact "dépôt git" {
+artifact code
+
+storage c #pink;line:red;line.bold;text:black [
+"Identifiants de BDD"
+]
+
+}
+
+cloud "Cloud Provider" {
+database bdd [
+"base de données"
+]
+node appli
+node agent
+
+
+
+appli -d-> bdd : stocke Données
+}
+
+
+Développeur - code : Produit
+Développeur - c : Renseigne
+
+code -d-> "Cloud Provider" : se déploie sur
+agent -d-> c : Déchiffre
+
+agent -d-> bdd : Paramètre
+agent -d-> appli : Paramètre
+
+@enduml

@@ -41,58 +41,32 @@ include::../code/01-sops-file.yaml[]
 - Autre formats possible, mais utilisé dans conf pour simplicité : INI JSON ...
 ****
 
+[.columns]
 == Méthodes de chiffrement
 
-=== Age
+[.column]
+--
+Chiffrement avec link:https://github.com/FiloSottile/age[age] pour cette présentation
+--
 
-INFO: Chiffrement via link:https://github.com/FiloSottile/age[age] pour cette présentation
+[.column]
+--
+Exemple de clé age
+
+[source,bash]
+----
+$ age-keygen
+# created: 2024-03-08T15:17:28+01:00
+# public key: age14trf5fvhkppd8suunru9mg7dkk9r6ndzwc7tnw45yufs2j9h3u9qqwttxu
+AGE-SECRET-KEY-1RM9QASYLNVDQ48HDY5ST7RUXX4LFWPR6PTUHUFG7N5RYUG0PNLLSG6D70R
+----
+--
 
 [.notes]
 ****
-Avantage : facile à utiliser
+- Usage simple
+- Non centralisé
+- Plusieurs méthodes de chiffrement : AWS KMS, Azure, GCP, PGP
 
-Inconvénient : non centralisé
 ****
 
-=== AWS KMS / GCP ...
-
-TODO Exemple + screen utilisation
-
-Préciser autres existent
-
-// [.columns]
-// === Autres formats possibles
-//
-// [.column]
-// --
-// JSON
-//
-// [%linenums,json]
-// ----
-// include::../code/01-sops-file.json[]
-// ----
-//
-// INI
-//
-// [%linenums,ini]
-// ----
-// include::../code/01-sops-file.ini[]
-// ----
-// --
-//
-// [.column]
-// --
-// ENV
-//
-// [%linenums,text]
-// ----
-// include::../code/01-sops-file.env[]
-// ----
-//
-// BINARY
-//
-// [%linenums]
-// ----
-// include::../code/01-sops-file.bin[]
-// ----
-// --

@@ -8,3 +8,12 @@ reveal.js
 !index-docinfo-footer.html
 css/font-awesome.css
 js/hightlight.min.js
+code/age.key
+code/*.secrets.yaml
+code/recipients/secrets.*.yaml
+code/recipients/*.key
+code/recipients/.sops.yaml
+
+# generated image
+images/01-problematique.svg
+images/02-recapitulatif.svg

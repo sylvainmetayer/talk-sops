@@ -21,6 +21,4 @@
 include::slides/00-intro.adoc[]
 include::slides/01-sops.adoc[]
 include::slides/02-demo-usage.adoc[]
-include::slides/03-chiffrement.adoc[]
-include::slides/04-destinataires.adoc[]
 include::slides/05-conclusion.adoc[]

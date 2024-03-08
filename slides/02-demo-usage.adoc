@@ -15,17 +15,31 @@ sops -d secrets.yaml
 
 TODO préciser variable env vers clé privée age
 
-=== Démo
+== Gestion des destinataires
 
-TODO démo scriptée :
+[%linenums,yaml]
+----
+include::../code/exemple.sops.yaml[]
+----
 
-- Génération clé age (privée/publique)
-- Création fichier
-- Chiffrement fichier
-- Déchiffrement fichier
+[.notes]
+****
+Attention, si permission de voir = permission d'éditer.
+****
 
+== Démo
+
+`./demo.sh`
 
 [.notes]
 ****
 ~5min
 ****
+
+== Pas très lisible tout ça ?
+
+TODO diff en clair
+
+- https://github.com/getsops/sops/issues/959
+- https://github.com/getsops/sops/discussions/1159
+

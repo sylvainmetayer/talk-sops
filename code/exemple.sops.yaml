@@ -1,0 +1,10 @@
+creation_rules:
+  - path_regex: .*\.?dev\.yaml
+    key_groups:
+      - age:
+          - age1pcutm2ytcnn5t2zpj4dvvqhzxw5dcj0gfqplevtev7h8j9hf397s22uacq
+          - age1248xnnj285mc759u43dv99fzlkgpf82khtm7jzepet70hnz33u2sln6v5a
+  - path_regex: .*\.?prod\.yaml
+    key_groups:
+      - age:
+          - age1pcutm2ytcnn5t2zpj4dvvqhzxw5dcj0gfqplevtev7h8j9hf397s22uacq
