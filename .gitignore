@@ -17,3 +17,5 @@ code/recipients/.sops.yaml
 # generated image
 images/01-problematique.svg
 images/02-recapitulatif.svg
+
+code/demo-magic.sh
