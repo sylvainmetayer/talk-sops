@@ -31,8 +31,8 @@ jobs:
         run: |
           mkdir -p build/${{ github.ref_name }}/reveal.js/dist && \
           cp -r *.html images css js build/${{ github.ref_name }} && \
-          cp -r reveal.js/dist/* build/${{ github.ref_name }}reveal.js/dist/ && \
-          cp -r reveal.js/plugin build/${{ github.ref_name }}reveal.js/
+          cp -r reveal.js/dist/* build/${{ github.ref_name }}/reveal.js/dist/ && \
+          cp -r reveal.js/plugin build/${{ github.ref_name }}/reveal.js/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.5.0
