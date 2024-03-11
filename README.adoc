@@ -11,4 +11,6 @@ Slides disponibles sur https://sylvainmetayer.github.io/talk-sops/#/[Github Page
 docker container run --rm -v $(pwd):/documents -w /documents asciidoctor/docker-asciidoctor:1.67 asciidoctor-revealjs -r asciidoctor-diagram index.adoc
 
 python3 -m http.server # open localhost:8000
+
+# use terminal with custom profile white background
 ----

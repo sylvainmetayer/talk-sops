@@ -1,61 +1,52 @@
 #!/usr/bin/env bash
 
+. ./demo-magic.sh -d -w
+
 # To avoid interference with my existing key
 unset SOPS_AGE_KEY_FILE
-
-env | grep SOPS
+clear
 
 ################################
-echo "Création d'une clé age"
-
-# TODO if age.key, skip, or else, generate key
+p " Création d'une clé age"
+p "age-keygen > age.key"
+test -f age.key || age-keygen > age.key 2>/dev/null
 cat age.key
 
 pubKey=$(grep 'key:' age.key | cut -d ':' -f 2 | xargs)
 
+wait
+################################
+clear
+p " Partons d'un fichier en clair"
+pei "cat 02-demo.yaml" && echo
 
 ################################
-echo "Fichier en clair"
+p " Chiffrement du fichier avec $pubKey en destinataire"
 
-cat 02-demo.yaml && echo
-
-################################
-echo "Chiffrement du fichier avec $pubKey en destinataire"
-
-sops -e --age "$pubKey" 02-demo.yaml > 02-demo.secrets.yaml
+pei "sops -e --age \"$pubKey\" 02-demo.yaml > 02-demo.secrets.yaml"
 
 ################################
-echo "Chiffrement partiel"
+p " Un autre fichier, avec seulement une donnée à chiffrer..."
 
-cat << EOF
-username: sylvain
-website: https://sylvain.dev
-password: "****""
-access_key: "****"
-secret_key: "****""
-EOF
+p "cat 02-partial-demo.yaml"
+cat 02-partial-demo-fake.yaml && echo
+pe "sops -e --encrypted-suffix password --age \"$pubKey\" 02-partial-demo.yaml > 02-partial-demo.secrets.yaml"
+pei "cat 02-partial-demo.secrets.yaml"
 
-sops -e --encrypted-suffix password --age "$pubKey" 02-partial-demo.yaml > 02-partial-demo.secrets.yaml
+p " Oups, il me faudrait une regex pour identifier les clés à chiffrer !"
+pe "sops -e --encrypted-regex \"(password)|(key)\" --age \"$pubKey\" 02-partial-demo.yaml > 02-partial-demo.secrets.yaml"
+pei "cat 02-partial-demo.secrets.yaml"
 
-cat 02-partial-demo.secrets.yaml
+p " Et maintenant, pour déchiffrer mes données ?"
+pe "sops -d 02-partial-demo.secrets.yaml"
+p " Oups, j'ai oublié de préciser ma clé privée"
+pei "export SOPS_AGE_KEY_FILE=$(pwd)/age.key"
+pe "sops -d 02-partial-demo.secrets.yaml"
 
-echo "Oups, il me faudrait une regex pour identifier les clés à chiffrer !"
-sops -e --encrypted-regex "(password)|(key)" --age "$pubKey" 02-partial-demo.yaml > 02-partial-demo.secrets.yaml
-cat 02-partial-demo.secrets.yaml
+p " Et pour mettre à jour les données d'un fichier de secret existant ?"
+pe sops 02-partial-demo.secrets.yaml
+pei "cat 02-partial-demo.secrets.yaml"
 
-#############################
-echo "Et maintenant, pour déchiffrer mes données ?"
-
-export SOPS_AGE_KEY_FILE=$(pwd)/age.key
-sops -d 02-partial-demo.secrets.yaml
-
-############################
-echo "Et pour mettre à jour les données d'un fichier de secret existant ?"
-sops 02-partial-demo.secrets.yaml
-
-cat 02-partial-demo.secrets.yaml
-
-##########################
-echo "Mais je n'aime pas vim moi !"
-EDITOR="code --wait" sops 02-partial-demo.secrets.yaml
-
+p "Mais je n'aime pas vim moi !"
+pe "EDITOR=\"code --wait\" sops 02-partial-demo.secrets.yaml"
+pei "cat 02-partial-demo.secrets.yaml"
