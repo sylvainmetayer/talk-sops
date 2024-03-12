@@ -17,6 +17,8 @@
 :stylesdir: css
 :customcss: css/meetup.css
 :imagesdir: images
+:revealjs_totalTime: 15*60
+:revealjs_defaultTiming: 60
 
 Sylvain MÉTAYER
 
