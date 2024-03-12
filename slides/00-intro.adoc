@@ -1,5 +1,7 @@
-[.presentation_background.columns.is-vcentered.transparency]
+[%notitle.columns.is-vcentered.transparency]
 == Présentation
+
+image::devoxx_presentation.jpg[background, size=fill]
 
 [.column.is-one-third]
 --

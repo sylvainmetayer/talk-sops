@@ -1,4 +1,6 @@
 @startuml
+skinparam handwritten true
+
 title Déploiement d'une application
 
 actor Développeur

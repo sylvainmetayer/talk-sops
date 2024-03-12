@@ -1,5 +1,7 @@
-[.columns]
+[.columns.transparency]
 == Conclusion
+
+image::devoxx_conclusion.jpg[background, size=fill]
 
 [.column]
 --
@@ -40,6 +42,9 @@ Permet de stocker les secrets avec le code source de manière sécurisée
 - https://taras.glek.net/post/github-to-sops-lighter-weight-secret-management/
 ****
 
+[.transparency]
 == Merci !
+
+image::devoxx_conclusion_2.jpg[background, size=fill]
 
 TODO openfeedback / QR code slides.

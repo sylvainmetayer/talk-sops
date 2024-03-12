@@ -46,8 +46,10 @@ include::../code/exemple.sops.yaml[]
 Attention, si permission de voir = permission d'éditer.
 ****
 
-[.demo_background]
+[.transparency]
 == Démo
+
+image::devoxx_demo.jpg[background, size=fill]
 
 `./demo.sh`
 
