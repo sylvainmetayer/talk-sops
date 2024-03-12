@@ -34,10 +34,12 @@ pe "sops -e --encrypted-suffix password --age \"$pubKey\" 02-partial-demo.yaml >
 pei "cat 02-partial-demo.secrets.yaml"
 
 p " Oups, il me faudrait une regex pour identifier les clés à chiffrer !"
+clear
 pe "sops -e --encrypted-regex \"(password)|(key)\" --age \"$pubKey\" 02-partial-demo.yaml > 02-partial-demo.secrets.yaml"
 pei "cat 02-partial-demo.secrets.yaml"
 
 p " Et maintenant, pour déchiffrer mes données ?"
+clear
 pe "sops -d 02-partial-demo.secrets.yaml"
 p " Oups, j'ai oublié de préciser ma clé privée"
 pei "export SOPS_AGE_KEY_FILE=$(pwd)/age.key"
