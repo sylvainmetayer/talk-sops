@@ -1,5 +1,6 @@
 creation_rules:
   - path_regex: .*\.?dev\.yaml
+    encrypted_suffix: 'password'
     key_groups:
       - age:
           - ALICE
@@ -8,3 +9,7 @@ creation_rules:
     key_groups:
       - age:
           - ALICE
+  # If no previous match
+  - key_groups:
+      - age:
+          - age16rspnzt6j2qxa2587t6umh9qykrqu2amrr0hx9xt2z7elyky3a3q4p5s7l

@@ -1,15 +1,14 @@
-[.columns.is-vcentered.transparency]
+[.presentation_background.columns.is-vcentered.transparency]
 == Présentation
 
 [.column.is-one-third]
 --
 image::photo.png[]
-// TODO resize 300*250
 --
 
 [.column.is-3.has-text-left.medium]
 --
-Sylvain
+Sylvain MÉTAYER
 
 link:https://sylvain.dev[]
 --
@@ -19,7 +18,7 @@ link:https://sylvain.dev[]
 [.vertical-align-middle]
 image:logo.png[width=250]
 
-Tech Lead @onepoint
+Tech Lead @Onepoint
 --
 
 [.notes]
@@ -35,7 +34,7 @@ Tech Lead @onepoint
 [.column]
 --
 [.vertical-align-middle]
-image:public-secrets.jpg[alt='Ton pire cauchemar']
+image:public-secrets.webp[alt='Ton pire cauchemar', width=512, height=512]
 --
 
 [.notes]
@@ -51,13 +50,10 @@ Où persister la valeur des secrets ?
 
 plantuml::diagrams/01-problematique.puml[format=svg]
 
-
 [.notes]
 ****
 - Directement sur le cloud provider, mais cela nécessite configuration manuelle
 - à la main dans l'application ?
 - Dans un Vault ? Si non existant, c'est une brique en plus à maintenir
 - Dans le code source, ça serait bien ? SOPS
-
-Exemple : Git <> sops <> argocd
 ****

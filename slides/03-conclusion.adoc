@@ -1,0 +1,91 @@
+[.columns]
+== Récapitulatif
+
+[.column]
+--
+plantuml::diagrams/02-recapitulatif.puml[format=svg, height=590]
+--
+
+[.column]
+--
+
+[.fragment]
+--
+.Terraform
+image::terraform_logo.svg[height=100]
+--
+
+[.fragment]
+--
+.Ansible
+image::ansible_logo.png[height=100]
+--
+
+--
+
+[.column]
+--
+
+[.fragment]
+--
+.ArgoCD
+image::argocd_logo.svg[height=100]
+--
+
+[.fragment]
+--
+.FluxCD
+image::flux_logo.png[height=100]
+--
+
+--
+
+[.column]
+--
+
+[.fragment]
+--
+.Kustomize
+image::kustomize_logo.png[height=100]
+--
+
+[.fragment]
+--
+Et plus encore !
+--
+
+--
+
+
+
+
+//
+// TODO schéma git <> chart helm <> argo <> sops
+//
+// Lien vers connecteur SOPS <> helm
+//
+// GitOps <> helm kustomize ansible tf + link
+//
+// (Slides avec icones tf ansible kustomize argo flux & co)
+//
+// Encrypting with SSH keys via age is not yet supported by SOPS.
+//
+// https://taras.glek.net/post/github-to-sops-lighter-weight-secret-management/
+
+// TODO https://jtama.github.io/alice-au-pays-d-opentelemetry/#/_context
+// https://github.com/jtama/alice-au-pays-d-opentelemetry/blob/main/alice_au_pays_d_otel/context.adoc
+
+// == Alternatives
+//
+// - https://opensource.com/article/19/2/secrets-management-tools-git
+// - Vault / AWS Secret Manager : Vendor lock-in
+// - Git crypt
+//
+// [.notes]
+// ****
+// Permet de stocker les secrets avec le code source de manière sécurisée
+// ****
+
+== Merci !
+
+TODO openfeedback / QR code slides.

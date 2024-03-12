@@ -50,3 +50,5 @@ pei "cat 02-partial-demo.secrets.yaml"
 p "Mais je n'aime pas vim moi !"
 pe "EDITOR=\"code --wait\" sops 02-partial-demo.secrets.yaml"
 pei "cat 02-partial-demo.secrets.yaml"
+
+cd recipients && ./demo.sh

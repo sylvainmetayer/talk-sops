@@ -1,5 +1,6 @@
 creation_rules:
   - path_regex: .*\.?dev\.yaml
+    encrypted_suffix: 'password'
     key_groups:
       - age:
           - age1pcutm2ytcnn5t2zpj4dvvqhzxw5dcj0gfqplevtev7h8j9hf397s22uacq

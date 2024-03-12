@@ -2,7 +2,7 @@
 title Déploiement d'une application
 
 actor Développeur
-artifact "dépôt git" {
+artifact "dépôt git      " {
 artifact code
 
 storage c #pink;line:red;line.bold;text:black [
@@ -16,21 +16,17 @@ database bdd [
 "base de données"
 ]
 node appli
-node agent
+node "outil d'intégration"
 
-
-
-appli -d-> bdd : stocke Données
+appli -d-> bdd : stocke données
 }
 
-
 Développeur - code : Produit
-Développeur - c : Renseigne
+Développeur -d-> c : Configure
 
 code -d-> "Cloud Provider" : se déploie sur
-agent -d-> c : Déchiffre
+"outil d'intégration" -d-> c : Déchiffre
 
-agent -d-> bdd : Paramètre
-agent -d-> appli : Paramètre
+"outil d'intégration" -d-> appli : Injection d'identifiant
 
 @enduml

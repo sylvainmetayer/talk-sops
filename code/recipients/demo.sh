@@ -1,20 +1,26 @@
 #!/usr/bin/env bash
 
+. ../demo-magic.sh -d -w
+
+# To avoid interference with my existing key
+unset SOPS_AGE_KEY_FILE
 cp init.sops.yaml .sops.yaml
+clear
+
 ########################
-echo "C'est bien long tout ça comme commande, t'as pas mieux ? J'ai plusieurs utilisateurs qui doivent accéder aux secrets, et pas à tous en plus !"
+p "C'est bien long tout ça comme commande, t'as pas mieux ? J'ai plusieurs utilisateurs qui doivent accéder aux secrets, et pas à tous en plus !"
 
-echo "Alice et bob travaillent sur un projet avec 2 environnements, mais seul Alice doit avoir accès aux secrets de production"
+p "Alice et bob travaillent sur un projet avec 2 environnements, mais seul Alice doit avoir accès aux secrets de production"
+p "(Sérieusement, alice et bob, t'avais plus plus d'inspiration ?)"
 
-ls dev.yaml prod.yaml
+pei "ls dev.yaml prod.yaml"
 
-cat dev.yaml
-
-echo "(Sérieusement, alice et bob, t'avais plus plus d'inspiration ?)"
-
-echo "On génère une clé pour Alice et une pour Bob"
-
-# TODO
+p "cat dev.yaml"
+cat dev.yaml && echo
+p "On génère une clé pour Alice et une pour Bob, et on renseigne le .sops.yaml"
+clear
+test -f alice.key || age-keygen > alice.key 2>/dev/null
+test -f bob.key || age-keygen > bob.key 2>/dev/null
 
 aliceKey=$(grep 'key:' alice.key | cut -d ':' -f 2 | xargs)
 bobKey=$(grep 'key:' bob.key | cut -d ':' -f 2 | xargs)
@@ -22,22 +28,41 @@ bobKey=$(grep 'key:' bob.key | cut -d ':' -f 2 | xargs)
 sed -i "s/ALICE/$aliceKey/g" .sops.yaml
 sed -i "s/BOB/$bobKey/g" .sops.yaml
 
-sops -e dev.yaml > secrets.dev.yaml
-sops -e prod.yaml > secrets.prod.yaml
-echo "C'est plus court comme ça non ?"
+pe "ls *.key && cat .sops.yaml"
 
-echo "Mais est-on sur que seul Alice peut déchiffrer les secrets de production ?"
+wait
+clear
+pe "sops -e dev.yaml > secrets.dev.yaml"
 
-cat secrets.prod.yaml
+p "Notre configuration de chiffrement partiel est bien prise en compte"
 
-echo "Note: Les commentaires sont également chiffrés !"
+p "cat secrets.dev.yaml"
+cat secrets.dev.yaml && echo
 
-echo "On récupère la clé privée de Bob, et on teste ça !"
-export SOPS_AGE_KEY_FILE=$(pwd)/bob.key
+wait
+clear
 
-sops -d secrets.prod.yaml || true
+pe "sops -e prod.yaml > secrets.prod.yaml"
+p "C'est plus court comme ça non ?"
 
-echo "Et maintenant, avec la clé d'Alice"
-export SOPS_AGE_KEY_FILE=$(pwd)/alice.key
-sops -d secrets.prod.yaml || true
+p "Mais est-on sur que seul Alice peut déchiffrer les secrets de production ?"
+clear
+pe "cat secrets.prod.yaml"
+p "Note: Les commentaires sont également chiffrés !"
+clear
+p "On récupère la clé privée de Bob, et on teste ça !"
+pei "export SOPS_AGE_KEY_FILE=$(pwd)/bob.key"
 
+pei "sops -d secrets.prod.yaml || true"
+
+p "Et maintenant, avec la clé d'Alice"
+clear
+pe "export SOPS_AGE_KEY_FILE=$(pwd)/alice.key"
+pei "sops -d secrets.prod.yaml || true"
+
+p "Super tout ça, mais maintenant, mon historique git est illisible ?"
+
+# For this one, use me default configured key
+export SOPS_AGE_KEY_FILE=~/.age.key
+
+pe "git diff "
