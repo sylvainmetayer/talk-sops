@@ -92,21 +92,3 @@ img {
 .blur {
     filter: blur(4px);
 }
-
-.presentation_background {
-    background-image: url("../images/devoxx_presentation.jpg");
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-size: cover;
-    opacity: 0.2;
-}
-
-.demo_background {
-    background-image: url("../images/devoxx_demo.jpg");
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-size: cover;
-    opacity: 0.2;
-}

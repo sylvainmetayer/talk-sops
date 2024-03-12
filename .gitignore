@@ -6,7 +6,6 @@ reveal.js
 *.html
 .asciidoctor
 !index-docinfo-footer.html
-css/font-awesome.css
 js/hightlight.min.js
 code/age.key
 code/*.secrets.yaml
