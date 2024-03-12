@@ -4,25 +4,24 @@
 }
 
 body::after {
-    content: url("../images/tnt_logo.svg");
+    content: url("../images/devoxx_logo.png");
     position: fixed;
     left: 0;
-    bottom: 0;
-    transform: scale(.5);
+    bottom: 10px;
 }
 
-h1 {
-    display: none;
+body {
+    background-image: ;
+}
+
+.reveal .section h1 {
+    /* TODO Fix this ? */
+    color: white !important;
 }
 
 .reveal ul {
     list-style-type: none;
 }
-
-.slide-background.conclusion {
-    background: url("../images/quarkus-logo.png") no-repeat 50% 15%;
-}
-
 
 .light h2 {
     color: var(--r-background-color);
@@ -69,7 +68,7 @@ img {
     margin: 0;
 }
 
-.important-text > *  {
+.important-text > * {
     font-size: xxx-large;
     font-weight: bold;
     color: #012d3f;
@@ -93,4 +92,22 @@ img {
 
 .blur {
     filter: blur(4px);
+}
+
+.presentation_background {
+    background-image: url("../images/devoxx_presentation.jpg");
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    opacity: 0.2;
+}
+
+.demo_background {
+    background-image: url("../images/devoxx_demo.jpg");
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    opacity: 0.2;
 }
