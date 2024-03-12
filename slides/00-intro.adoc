@@ -25,10 +25,7 @@ Tech Lead @Onepoint
 
 [.notes]
 ****
-* this is the new block type for speaker notes: sidebar
-* `notes` role required (written `.notes` in block attribute)
-* source is slightly more compact
-* and not tied to an admonition which can be useful in slides
+Conteneur / k8s quotidien, stocke/interagit secrets appli
 ****
 
 == Problématique
