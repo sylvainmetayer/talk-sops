@@ -414,7 +414,8 @@ ul.byline li + li {
   margin-top: 0.25em;
 }
 </style><link rel="stylesheet" href="css/meetup.css"></head><body><div class="reveal"><div class="slides"><section class="title" data-state="title" data-background-size="fill" data-background-image="images/intro_devoxx.jpg"><h1>SOPS, passez un savon à vos secrets en clair !</h1><div class="preamble"><div class="paragraph"><p>Sylvain MÉTAYER</p></div></div></section>
-<section id="_présentation" class="presentation_background columns is-vcentered transparency"><h2>Présentation</h2><div class="slide-content"><div class="openblock column is-one-third"><div class="content"><div class="imageblock"><img src="images/photo.png" alt="photo"></div></div></div>
+<section id="_présentation" class="columns is-vcentered transparency" data-background-image="images/devoxx_presentation.jpg" data-background-size="fill"><div class="slide-content">
+<div class="openblock column is-one-third"><div class="content"><div class="imageblock"><img src="images/photo.png" alt="photo"></div></div></div>
 <div class="openblock column is-3 has-text-left medium"><div class="content"><div class="paragraph"><p>Sylvain MÉTAYER</p></div>
 <div class="paragraph"><p><a href="https://sylvain.dev" class="bare">https://sylvain.dev</a></p></div></div></div>
 <div class="openblock column"><div class="content"><div class="paragraph vertical-align-middle"><p><span class="image"><img src="images/logo.png" alt="logo" width="250"></span></p></div>
@@ -485,7 +486,8 @@ sops -r -i --rm-age PUB_KEY secrets.yaml</code></pre></div></div>
       - age:
           - age1pcutm2ytcnn5t2zpj4dvvqhzxw5dcj0gfqplevtev7h8j9hf397s22uacq</code></pre></div></div></div></div>
 <aside class="notes"><div class="paragraph"><p>Attention, si permission de voir = permission d&#8217;éditer.</p></div></aside></div></section></section>
-<section id="_démo" class="demo_background"><h2>Démo</h2><div class="slide-content"><div class="paragraph"><p><code>./demo.sh</code></p></div>
+<section id="_démo" class="transparency" data-background-image="images/devoxx_demo.jpg" data-background-size="fill"><h2>Démo</h2><div class="slide-content">
+<div class="paragraph"><p><code>./demo.sh</code></p></div>
 <aside class="notes"><div class="paragraph"><p>~5min</p></div></aside></div></section>
 <section id="_pas_très_lisible_tout_ça"><h2>Pas très lisible tout ça ?</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-text hljs" data-noescape="true" data-line-numbers="7,8" data-lang="text">$ git diff 34526..3933
 diff --git a/code/recipients/example-diff-secrets.yaml b/code/recipients/example-diff-secrets.yaml
@@ -507,7 +509,8 @@ index be346d4..7210f74 100644
 @@ -1 +1 @@
 -password: password
 +password: ThisIsARealPassword</code></pre></div></div></div></div></div></section>
-<section id="_conclusion" class="columns"><h2>Conclusion</h2><div class="slide-content"><div class="openblock column"><div class="content"><div class="imageblock"><img src="images/02-recapitulatif.svg" alt="Diagram" height="590"></div></div></div>
+<section id="_conclusion" class="columns transparency" data-background-image="images/devoxx_conclusion.jpg" data-background-size="fill"><h2>Conclusion</h2><div class="slide-content">
+<div class="openblock column"><div class="content"><div class="imageblock"><img src="images/02-recapitulatif.svg" alt="Diagram" height="590"></div></div></div>
 <div class="openblock column"><div class="content"><div class="imageblock fragment"><img src="images/terraform_logo.svg" alt="Terraform" height="100"></div>
 <div class="imageblock fragment"><img src="images/ansible_logo.png" alt="Ansible" height="100"></div>
 <div class="imageblock fragment"><img src="images/argocd_logo.svg" alt="ArgoCD" height="100"></div></div></div>
@@ -519,7 +522,8 @@ index be346d4..7210f74 100644
 - Alternative pour ceux qui ne veulent pas manager un Vault
 - Limite : Encrypting with SSH keys via age is not yet supported by SOPS.
 - <a href="https://taras.glek.net/post/github-to-sops-lighter-weight-secret-management/" class="bare">https://taras.glek.net/post/github-to-sops-lighter-weight-secret-management/</a></p></div></aside></div></section>
-<section id="_merci"><h2>Merci !</h2><div class="slide-content"><div class="paragraph"><p>TODO openfeedback / QR code slides.</p></div></div></section></div></div><script src="reveal.js/dist/reveal.js"></script><script>Array.prototype.slice.call(document.querySelectorAll('.slides section')).forEach(function(slide) {
+<section id="_merci" class="transparency" data-background-image="images/devoxx_conclusion_2.jpg" data-background-size="fill"><h2>Merci !</h2><div class="slide-content">
+<div class="paragraph"><p>TODO openfeedback / QR code slides.</p></div></div></section></div></div><script src="reveal.js/dist/reveal.js"></script><script>Array.prototype.slice.call(document.querySelectorAll('.slides section')).forEach(function(slide) {
   if (slide.getAttribute('data-background-color')) return;
   // user needs to explicitly say he wants CSS color to override otherwise we might break custom css or theme (#226)
   if (!(slide.classList.contains('canvas') || slide.classList.contains('background'))) return;

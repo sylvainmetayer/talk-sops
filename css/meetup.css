@@ -10,13 +10,12 @@ body::after {
     bottom: 10px;
 }
 
-body {
-    background-image: ;
+.reveal section h1 {
+    color: white;
 }
 
-.reveal .section h1 {
-    /* TODO Fix this ? */
-    color: white !important;
+.reveal section h1+div.preamble>div.paragraph>p {
+    color: white;
 }
 
 .reveal ul {
@@ -32,7 +31,7 @@ body {
 
 
 .transparency.slide-background.present {
-    opacity: 0.20;
+    opacity: 0.30;
 }
 
 .big {
