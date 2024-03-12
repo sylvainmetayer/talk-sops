@@ -59,10 +59,3 @@ p "Et maintenant, avec la clé d'Alice"
 clear
 pe "export SOPS_AGE_KEY_FILE=$(pwd)/alice.key"
 pei "sops -d secrets.prod.yaml || true"
-
-p "Super tout ça, mais maintenant, mon historique git est illisible ?"
-
-# For this one, use me default configured key
-export SOPS_AGE_KEY_FILE=~/.age.key
-
-pe "git diff "

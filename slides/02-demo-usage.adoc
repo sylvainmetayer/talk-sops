@@ -1,6 +1,6 @@
 === Chiffrement
 
-[source, shell]
+[source,shell]
 ----
 sops -e --age age14trf5fvhkppd8suunru9mg7dkk9r6ndzwc7tnw45yufs2j9h3u9qqwttxu \
 plaintext.yaml > secrets.yaml
@@ -8,9 +8,8 @@ plaintext.yaml > secrets.yaml
 
 === Chiffrement partiel
 
-[source, shell]
+[source,shell]
 ----
-sops --encrypt --encrypted-regex '^(data|stringData)$' k8s-secrets.yaml
 sops -e --encrypted-suffix MY_KEY --age \
 age14trf5fvhkppd8suunru9mg7dkk9r6ndzwc7tnw45yufs2j9h3u9qqwttxu \
 plaintext.yaml > secrets.yaml
@@ -27,7 +26,7 @@ sops -d secrets.yaml
 === Gestion des destinataires
 
 .With sops cli
-[source, shell]
+[source,shell]
 ----
 sops -r -i --add-age PUB_KEY,PUB_KEY2 secrets.yaml
 sops -r -i --rm-age PUB_KEY secrets.yaml
@@ -41,6 +40,7 @@ sops -r -i --rm-age PUB_KEY secrets.yaml
 include::../code/exemple.sops.yaml[]
 ----
 --
+
 [.notes]
 ****
 Attention, si permission de voir = permission d'éditer.
@@ -58,8 +58,33 @@ Attention, si permission de voir = permission d'éditer.
 
 == Pas très lisible tout ça ?
 
-TODO diff en clair
+[%linenums,text,highlight=7-8]
+----
+$ git diff 34526..3933
+diff --git a/code/recipients/example-diff-secrets.yaml b/code/recipients/example-diff-secrets.yaml
+index be346d4..7210f74 100644
+--- a/code/recipients/example-diff-secrets.yaml
++++ b/code/recipients/example-diff-secrets.yaml
+@@ -1,21 +1,21 @@
+-password: ENC[AES256_GCM,data:EuHISKWakII=,iv:1i5ZMWseSJpcZoPdkdhNHaytlapMD5J4MmYJDSjPetA=,tag:SleSVvjR9arBbVIpUeFC5Q==,type:str]
++password: ENC[AES256_GCM,data:RlVe+IAXalyz75NeVqsS64gqRQ==,iv:dq/Yd+25rH2a9pXHYMQ4Qs1qxDPcO5JCIL1TlT+yxG4=,tag:Es0gSsnabjyx4UcHiN91eA==,type:str]
+[...]
+----
 
-- https://github.com/getsops/sops/issues/959
-- https://github.com/getsops/sops/discussions/1159
-
+[.fragment]
+--
+[%linenums,shell,highlight=1|2-3|10-11]
+----
+$ git config diff.sopsdiffer.textconv "sops -d"
+$ cat .gitattributes
+include::../.gitattributes[]
+$ git diff 34526..3933
+diff --git a/code/recipients/example-diff-secrets.yaml b/code/recipients/example-diff-secrets.yaml
+index be346d4..7210f74 100644
+--- a/code/recipients/example-diff-secrets.yaml
++++ b/code/recipients/example-diff-secrets.yaml
+@@ -1 +1 @@
+-password: password
++password: ThisIsARealPassword
+----
+--
