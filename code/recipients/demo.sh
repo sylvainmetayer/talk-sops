@@ -10,12 +10,10 @@ clear
 ########################
 p "C'est bien long tout ça comme commande, t'as pas mieux ? J'ai plusieurs utilisateurs qui doivent accéder aux secrets, et pas à tous en plus !"
 
-p "Alice et bob travaillent sur un projet avec 2 environnements, mais seul Alice doit avoir accès aux secrets de production"
-p "(Sérieusement, alice et bob, t'avais plus plus d'inspiration ?)"
+p "Alice et Bob travaillent sur un projet avec 2 environnements, mais seul Alice doit avoir accès aux secrets de production"
+p "(Sérieusement, Alice et Bob, t'avais plus plus d'inspiration ?)"
 
-pei "ls dev.yaml prod.yaml"
-
-p "cat dev.yaml"
+pei "cat dev.yaml"
 cat dev.yaml && echo
 p "On génère une clé pour Alice et une pour Bob, et on renseigne le .sops.yaml"
 clear
@@ -33,17 +31,7 @@ pe "ls *.key && cat .sops.yaml"
 wait
 clear
 pe "sops -e dev.yaml > secrets.dev.yaml"
-
-p "Notre configuration de chiffrement partiel est bien prise en compte"
-
-p "cat secrets.dev.yaml"
-cat secrets.dev.yaml && echo
-
-wait
-clear
-
 pe "sops -e prod.yaml > secrets.prod.yaml"
-p "C'est plus court comme ça non ?"
 
 p "Mais est-on sur que seul Alice peut déchiffrer les secrets de production ?"
 clear
