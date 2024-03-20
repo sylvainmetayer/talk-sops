@@ -10,9 +10,7 @@ link:https://github.com/getsops/sops[Documentation & Installation]
 
 [.column]
 --
-Installation possible avec link:TODO_SLIDES_ASDF[asdf]
-
-link:https://www.cncf.io/projects/sops/[CNCF Sandbox]
+Installation possible avec link:https://asdf.talks.sylvain.dev/[asdf]
 --
 
 [.notes]
