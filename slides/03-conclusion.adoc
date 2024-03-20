@@ -42,9 +42,21 @@ Permet de stocker les secrets avec le code source de manière sécurisée
 - https://taras.glek.net/post/github-to-sops-lighter-weight-secret-management/
 ****
 
-[.transparency]
+[.columns.transparency]
 == Merci !
 
 image::devoxx_conclusion_2.jpg[background, size=fill]
 
-TODO openfeedback / QR code slides.
+[.column]
+--
+[caption=]
+.https://sops.talks.sylvain.dev
+image::slides_link.svg[height=300,alt='Slides']
+--
+
+[.column]
+--
+[caption=]
+.TODO Openfeedback
+image::slides_link.svg[height=300,alt='OpenFeedback']
+--
