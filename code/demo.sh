@@ -4,6 +4,8 @@
 
 # To avoid interference with my existing key
 unset SOPS_AGE_KEY_FILE
+# Cleanup
+rm age.key 02-demo.secrets.yaml
 clear
 
 ################################

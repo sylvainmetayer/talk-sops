@@ -5,15 +5,17 @@
 # To avoid interference with my existing key
 unset SOPS_AGE_KEY_FILE
 cp init.sops.yaml .sops.yaml
+# Cleanup
+rm alice.key bob.key secrets.dev.yaml secrets.prod.yaml
 clear
 
 ########################
-p "C'est bien long tout ça comme commande, t'as pas mieux ? J'ai plusieurs utilisateurs qui doivent accéder aux secrets, et pas à tous en plus !"
+p "J'ai plusieurs utilisateurs qui doivent accéder aux secrets, je ne veux pas de commande à rallonge moi !"
 
 p "Alice et Bob travaillent sur un projet avec 2 environnements, mais seul Alice doit avoir accès aux secrets de production"
-p "(Sérieusement, Alice et Bob, t'avais plus plus d'inspiration ?)"
+echo "(Sérieusement, Alice et Bob, t'avais plus plus d'inspiration ?)"
 
-pei "cat dev.yaml"
+p "cat dev.yaml"
 cat dev.yaml && echo
 p "On génère une clé pour Alice et une pour Bob, et on renseigne le .sops.yaml"
 clear
@@ -31,9 +33,10 @@ pe "ls *.key && cat .sops.yaml"
 wait
 clear
 pe "sops -e dev.yaml > secrets.dev.yaml"
+echo "Plus besoin de préciser les destinataires !"
 pe "sops -e prod.yaml > secrets.prod.yaml"
 
-p "Mais est-on sur que seul Alice peut déchiffrer les secrets de production ?"
+p "Mais est-on sur que seule Alice peut déchiffrer les secrets de production ?"
 clear
 pe "cat secrets.prod.yaml"
 p "Note: Les commentaires sont également chiffrés !"
