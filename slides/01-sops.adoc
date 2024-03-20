@@ -24,7 +24,7 @@ CNCF Sandbox depuis May 17, 2023 : Gouvernance
 
 === Structure d'un fichier
 
-[%linenums,yaml,highlight=1|2|7..16|17..21]
+[%linenums,yaml,highlight=1|7..16|17..21]
 ----
 include::../code/01-sops-file.yaml[]
 ----
