@@ -45,8 +45,8 @@ Pas de vault / secrets manager
 
 == Cas d'usage
 
-Où persister la valeur des secrets ?
-
+[caption=]
+.Où persister la valeur des secrets ?
 plantuml::diagrams/01-problematique.puml[format=svg]
 
 [.notes]

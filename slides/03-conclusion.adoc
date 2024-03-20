@@ -11,23 +11,23 @@ plantuml::diagrams/02-recapitulatif.puml[format=svg, height=590]
 [.column]
 --
 [.fragment]
-image::terraform_logo.svg[height=100,alt='Terraform']
+image::terraform_logo.svg[height=100,alt='Terraform',link=https://registry.terraform.io/providers/carlpett/sops/latest/docs]
 
 [.fragment]
-image::ansible_logo.png[height=100,alt='Ansible']
+image::ansible_logo.png[height=100,alt='Ansible',link=https://docs.ansible.com/ansible/latest/collections/community/sops/index.html]
 
 [.fragment]
-image::argocd_logo.svg[height=100,alt='ArgoCD']
+image::argocd_logo.svg[height=100,alt='ArgoCD',link=https://github.com/jkroepke/helm-secrets/wiki/ArgoCD-Integration#installation-on-argo-cd]
 
 --
 
 [.column]
 --
 [.fragment]
-image::kustomize_logo.png[height=100,alt='Kustomize']
+image::kustomize_logo.png[height=100,alt='Kustomize',link=https://github.com/goabout/kustomize-sopssecretgenerator]
 
 [.fragment]
-image::flux_logo.png[height=100,alt='FluxCD']
+image::flux_logo.png[height=100,alt='FluxCD',link=https://fluxcd.io/flux/guides/mozilla-sops/]
 
 [.fragment]
 Et plus encore !
