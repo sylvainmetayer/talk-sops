@@ -1,0 +1,26 @@
+[%auto-animate]
+== Exemple
+
+.file.yml
+[source%linenums,yaml,data-id=sample-sops]
+----
+password: a secure password for DevoxxFR !
+----
+
+[%auto-animate]
+=== Structure d'un fichier
+
+.secrets.yml
+[source%linenums,yaml,highlight=1|7..16|17..21,data-id=sample-sops]
+----
+include::../code/01-sops-file.yaml[]
+----
+
+[.notes]
+****
+- Chiffrement symétrique pour le contenu du fichier (même clé de chiffrement pour tous les destinataires)
+- Chiffrément asymétrique de la clé de chiffrement pour chaque destinaire avec sa clé publique
+- Seule la valeur est chiffrée
+- Metadata sops incluse dans le fichier, ainsi que les destinataires.
+- Tant qu'un des destinataires a accès au fichier, il est possible de lire et modifier le contenu.
+****

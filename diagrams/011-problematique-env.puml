@@ -1,0 +1,32 @@
+@startuml
+skinparam handwritten true
+title Déploiement d'une application
+
+
+actor Développeur
+
+artifact "dépôt git    " {
+artifact code
+artifact ".env.sample" #lightblue;line:lightblue;line.bold;text:black
+'".env.sample" -d-> code : "dev Local"
+}
+
+storage c #pink;line:red;line.bold;text:black [
+".env"
+]
+
+cloud "Cloud Provider"  {
+database bdd [
+"base de données"
+]
+node appli
+
+appli -d-> bdd : stocke Données
+}
+
+Développeur - code : Produit
+
+code -d-> "Cloud Provider" : se déploie sur
+c -d-> appli : Injection d'identifiant
+
+@enduml

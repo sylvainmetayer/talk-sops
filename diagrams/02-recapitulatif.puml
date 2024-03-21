@@ -7,9 +7,10 @@ actor Développeur
 artifact "dépôt git      " {
 artifact code
 
-storage c #pink;line:red;line.bold;text:black [
-"Identifiants de BDD"
+storage c #lightblue;line:lightblue;line.bold;text:black [
+"secrets.yaml"
 ]
+storage ".sops.yaml" #lightblue;line:lightblue;line.bold;text:black
 
 }
 

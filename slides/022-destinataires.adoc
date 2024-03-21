@@ -1,0 +1,22 @@
+== Gestion des destinataires
+
+.With sops cli
+[source,shell]
+----
+sops -r -i --add-age PUB_KEY,PUB_KEY2 secrets.yaml
+sops -r -i --rm-age PUB_KEY secrets.yaml
+----
+
+[.fragment]
+--
+..sops.yaml
+[%linenums,yaml]
+----
+include::../code/exemple.sops.yaml[]
+----
+--
+
+[.notes]
+****
+Attention, si permission de voir = permission d'éditer.
+****

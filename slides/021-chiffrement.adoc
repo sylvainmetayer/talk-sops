@@ -1,0 +1,55 @@
+[%auto-animate.is-full]
+== Chiffrement
+
+[source%linenums,bash,data-id=cli-usage]
+----
+sops -e --age \
+age14trf5fvhkppd8suunru9mg7dkk9r6ndzwc7tnw45yufs2j9h3u9qqwttxu \
+plaintext.yaml > secrets.yaml
+----
+
+[%auto-animate]
+=== Chiffrement partiel
+
+[source%linenums,bash,data-id=cli-usage,highlight=1]
+----
+sops -e --encrypted-suffix password --age \
+age14trf5fvhkppd8suunru9mg7dkk9r6ndzwc7tnw45yufs2j9h3u9qqwttxu \
+plaintext.yaml > secrets.yaml
+----
+
+== Déchiffrement
+
+[source%linenums,bash]
+----
+export SOPS_AGE_KEY_FILE=/path/to/my/private/key
+sops -d secrets.yaml
+----
+
+[%auto-animate.is-full]
+== Mise à jour
+
+[source%linenums,bash,data-id=sops-edit]
+----
+sops secrets.yaml
+----
+
+[WARNING]
+_Il est nécessaire d'avoir accès à la clé privée pour éditer le fichier_
+
+[.notes]
+****
+Les destinataires ne seront pas modifiés, seul le contenu le sera
+****
+
+[%notitle%auto-animate.is-full]
+=== Mise à jour
+
+.Si on veut autre chose que vim
+[source%linenums,bash,data-id=sops-edit]
+----
+EDITOR="code --wait" sops secrets.yaml
+----
+
+[TIP]
+_--wait : Wait for the files to be closed before returning._

@@ -1,0 +1,58 @@
+[%notitle.columns.is-vcentered]
+== Secrets OPerationS
+
+[.column.is-two-fifths]
+--
+image::logo_sops.png[]
+
+https://github.com/getsops/sops
+
+Installation avec link:https://asdf.talks.sylvain.dev/[asdf]footnote:[Instant pub !]
+--
+
+[.column.is-three-fifths]
+--
+[%step]
+- Depuis 2016
+- link:https://www.cncf.io/projects/sops/[CNCF Sandbox]
+- Outil auto-suffisant
+- Types de fichiers : `yaml, json, ini, .env`
+--
+
+[.notes]
+****
+- CNCF Sandbox depuis May 17, 2023 : Gouvernance
+- Pub sujet ASDF
+- Ne nécessite pas de serveur centralisé (et donc la maintenance de ce dernier). Alternative viable en cas de non-dispo de vault et/ou autre.
+- SOPS permet de chiffrer des données dans un fichier à l'aide de plusieurs méthodes de chiffrements (SOPS, KMS...).
+****
+
+include::011-structure.adoc[]
+
+[.columns.is-vcentered]
+=== Méthodes de chiffrement
+
+[.column.is-one-fifths]
+--
+Chiffrement avec link:https://github.com/FiloSottile/age[age]footnote:[Mais aussi : AWS KMS, GCP KMS, Azure Key Vault et PGP]
+--
+
+[.column.is-four-fifths]
+--
+Exemple de clé age
+
+[source,bash]
+----
+$ age-keygen
+# created: 2024-03-08T15:17:28+01:00
+# public key: age14trf5fvhkppd8suunru9mg7dkk9r6ndzwc7tnw45yufs2j9h3u9qqwttxu
+AGE-SECRET-KEY-1RM9QASYLNVDQ48HDY5ST7RUXX4LFWPR6PTUHUFG7N5RYUG0PNLLSG6D70R
+----
+--
+
+[.notes]
+****
+- Usage simple, recommandé par SOPS
+- Plusieurs méthodes de chiffrement : AWS KMS, GCP KMS, Azure Key Vault, PGP, Hashicorp Vault
+- Ce qui est utilisé pour ces démos.
+****

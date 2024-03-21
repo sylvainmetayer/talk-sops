@@ -3,7 +3,7 @@
 :source-highlighter: highlight.js
 :highlightjsdir: js
 :autofit-option:
-:icons: image
+:icons!:
 :iconfont-remote!:
 :notitle:
 :revealjs_slideNumber: true
@@ -19,10 +19,15 @@
 :imagesdir: images
 :revealjs_totalTime: 15*60
 :revealjs_defaultTiming: 60
+:tip-caption: 💡
+:important-caption: 📌
+:warning-caption: ⚠️
+:caution-caption: 🚨
+:example-caption: ✏️
 
 Sylvain MÉTAYER
 
-include::slides/00-intro.adoc[]
-include::slides/01-sops.adoc[]
-include::slides/02-demo-usage.adoc[]
-include::slides/03-conclusion.adoc[]
+include::slides/000-intro.adoc[]
+include::slides/010-sops.adoc[]
+include::slides/020-demo-usage.adoc[]
+include::slides/030-conclusion.adoc[]

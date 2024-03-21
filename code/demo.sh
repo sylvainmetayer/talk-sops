@@ -42,7 +42,6 @@ pei "cat 02-demo.secrets.yaml"
 
 clear
 p "Mais je n'aime pas vim moi !"
-pe "EDITOR=\"code --wait\" sops 02-demo.secrets.yaml"
-pei "cat 02-demo.secrets.yaml"
+p "EDITOR=\"code --wait\" sops 02-demo.secrets.yaml"
 
 cd recipients && ./demo.sh

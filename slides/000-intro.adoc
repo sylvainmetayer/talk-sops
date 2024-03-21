@@ -43,11 +43,20 @@ Des secrets à passer à nos applications, pour autant on ne veut pas avoir à l
 Pas de vault / secrets manager
 ****
 
+[.columns.is-vcentered]
 == Cas d'usage
 
-[caption=]
-.Où persister la valeur des secrets ?
-plantuml::diagrams/01-problematique.puml[format=svg]
+_Où persister la valeur des secrets ?_
+
+[.column.is-two-fifths]
+--
+plantuml::diagrams/010-problematique.puml[format=svg]
+--
+
+[.column.is-two-fifths]
+--
+plantuml::diagrams/011-problematique-env.puml[format=svg]
+--
 
 [.notes]
 ****

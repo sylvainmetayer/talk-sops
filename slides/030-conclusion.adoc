@@ -57,6 +57,6 @@ image::slides_link.svg[height=300,alt='Slides']
 [.column]
 --
 [caption=]
-.TODO Openfeedback
-image::slides_link.svg[height=300,alt='OpenFeedback']
+.Vos retours
+image::openfeedback.svg[height=300,alt='Vos retours']
 --
