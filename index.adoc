@@ -25,7 +25,7 @@
 :caution-caption: 🚨
 :example-caption: ✏️
 
-Sylvain MÉTAYER
+@sylvain_metayer
 
 include::slides/000-intro.adoc[]
 include::slides/010-sops.adoc[]

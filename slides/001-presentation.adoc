@@ -1,0 +1,29 @@
+[%notitle.columns.is-vcentered.transparency]
+== Présentation
+
+image::devoxx_presentation.jpg[background, size=fill]
+
+[.column.is-one-third]
+--
+image::photo.png[]
+--
+
+[.column.is-3.has-text-left.medium]
+--
+Sylvain MÉTAYER
+
+link:https://sylvain.dev[]
+--
+
+[.column]
+--
+[.vertical-align-middle]
+image:logo.png[width=250]
+
+Tech Lead @Onepoint
+--
+
+[.notes]
+****
+Conteneur / k8s quotidien, stocke/interagit secrets appli
+****

@@ -1,32 +1,4 @@
-[%notitle.columns.is-vcentered.transparency]
-== Présentation
-
-image::devoxx_presentation.jpg[background, size=fill]
-
-[.column.is-one-third]
---
-image::photo.png[]
---
-
-[.column.is-3.has-text-left.medium]
---
-Sylvain MÉTAYER
-
-link:https://sylvain.dev[]
---
-
-[.column]
---
-[.vertical-align-middle]
-image:logo.png[width=250]
-
-Tech Lead @Onepoint
---
-
-[.notes]
-****
-Conteneur / k8s quotidien, stocke/interagit secrets appli
-****
+include::001-presentation.adoc[]
 
 == Problématique
 
@@ -61,7 +33,7 @@ plantuml::diagrams/011-problematique-env.puml[format=svg]
 [.notes]
 ****
 - Directement sur le cloud provider, mais cela nécessite configuration manuelle
-- à la main dans l'application ?
+- À la main dans l'application ?
 - Dans un Vault ? Si non existant, c'est une brique en plus à maintenir
 - Dans le code source, ça serait bien ? SOPS
 ****
