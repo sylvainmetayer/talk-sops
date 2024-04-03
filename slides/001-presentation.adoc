@@ -1,7 +1,7 @@
 [%notitle.columns.is-vcentered.transparency]
 == Présentation
 
-image::devoxx_presentation.jpg[background, size=fill]
+image::devoxx/DevoxxFR2024_0034.jpg[background, size=fill]
 
 [.column.is-one-third]
 --
@@ -20,7 +20,7 @@ link:https://sylvain.dev[]
 [.vertical-align-middle]
 image:logo.png[width=250]
 
-Tech Lead @Onepoint
+Tech Lead link:https://www.groupeonepoint.com/fr/[@Onepoint]
 --
 
 [.notes]
