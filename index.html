@@ -487,7 +487,7 @@ sops -r -i --rm-age PUB_KEY secrets.yaml</code></pre></div></div>
 <section id="_démo" class="transparency" data-background-image="images/devoxx_demo.jpg" data-background-size="fill"><h2>Démo</h2><div class="slide-content">
 <div class="paragraph"><p><code>./demo.sh</code></p></div>
 <aside class="notes"><div class="paragraph"><p>~5min</p></div></aside></div></section>
-<section id="_pas_très_lisible_tout_ça"><h2>Pas très lisible tout ça ?</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-text hljs" data-noescape="true" data-line-numbers="7,8" data-lang="text">$ git diff 34526..3933
+<section><section id="_pas_très_lisible_tout_ça" data-auto-animate><h2>Pas très lisible tout ça ?</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-text hljs" data-noescape="true" data-line-numbers="7,8" data-lang="text">$ git diff 34526..3933
 diff --git a/code/recipients/example-diff-secrets.yaml b/code/recipients/example-diff-secrets.yaml
 index be346d4..7210f74 100644
 --- a/code/recipients/example-diff-secrets.yaml
@@ -495,8 +495,7 @@ index be346d4..7210f74 100644
 @@ -1,21 +1,21 @@
 -password: ENC[AES256_GCM,data:EuHISKWakII=,iv:1i5ZMWseSJpcZoPdkdhNHaytlapMD5J4MmYJDSjPetA=,tag:SleSVvjR9arBbVIpUeFC5Q==,type:str]
 +password: ENC[AES256_GCM,data:RlVe+IAXalyz75NeVqsS64gqRQ==,iv:dq/Yd+25rH2a9pXHYMQ4Qs1qxDPcO5JCIL1TlT+yxG4=,tag:Es0gSsnabjyx4UcHiN91eA==,type:str]
-[...]</code></pre></div></div>
-<div class="openblock fragment"><div class="content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-line-numbers="1|2,3|10,11" data-lang="shell">$ git config diff.sopsdiffer.textconv "sops -d"
+[...]</code></pre></div></div></div></section><section id="_pas_très_lisible_tout_ça_2" data-auto-animate><h2>Pas très lisible tout ça ?</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-line-numbers="1|2,3|10,11" data-lang="shell">$ git config diff.sopsdiffer.textconv "sops -d"
 $ cat .gitattributes
 code/recipients/example-diff-secrets.yaml diff=sopsdiffer
 $ git diff 34526..3933
@@ -506,16 +505,16 @@ index be346d4..7210f74 100644
 +++ b/code/recipients/example-diff-secrets.yaml
 @@ -1 +1 @@
 -password: password
-+password: ThisIsARealPassword</code></pre></div></div></div></div>
-<aside class="notes"><div class="paragraph"><p>Bien évidemment, uniquement possible si vous avez accès au fichier, et à ne pas exposer partout !</p></div></aside></div></section>
++password: ThisIsARealPassword</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Bien évidemment, uniquement possible si vous avez accès au fichier, et à ne pas exposer partout !</p></div></aside></div></section></section>
 <section id="_conclusion" class="columns transparency" data-background-image="images/devoxx_conclusion.jpg" data-background-size="fill"><h2>Conclusion</h2><div class="slide-content">
 <div class="openblock column"><div class="content"><div class="imageblock"><img src="images/02-recapitulatif.svg" alt="Diagram" height="590"></div></div></div>
-<div class="openblock column"><div class="content"><div class="imageblock fragment"><a class="image" href="https://registry.terraform.io/providers/carlpett/sops/latest/docs"><img src="images/terraform_logo.svg" alt="Terraform" height="100"></a></div>
-<div class="imageblock fragment"><a class="image" href="https://docs.ansible.com/ansible/latest/collections/community/sops/index.html"><img src="images/ansible_logo.png" alt="Ansible" height="100"></a></div>
-<div class="imageblock fragment"><a class="image" href="https://github.com/jkroepke/helm-secrets/wiki/ArgoCD-Integration#installation-on-argo-cd"><img src="images/argocd_logo.svg" alt="ArgoCD" height="100"></a></div></div></div>
-<div class="openblock column"><div class="content"><div class="imageblock fragment"><a class="image" href="https://github.com/goabout/kustomize-sopssecretgenerator"><img src="images/kustomize_logo.png" alt="Kustomize" height="100"></a></div>
-<div class="imageblock fragment"><a class="image" href="https://fluxcd.io/flux/guides/mozilla-sops/"><img src="images/flux_logo.png" alt="FluxCD" height="100"></a></div>
-<div class="paragraph fragment"><p>Et plus encore !</p></div></div></div>
+<div class="openblock column fragment"><div class="content"><div class="imageblock"><a class="image" href="https://registry.terraform.io/providers/carlpett/sops/latest/docs"><img src="images/terraform_logo.svg" alt="Terraform" height="100"></a></div>
+<div class="imageblock"><a class="image" href="https://docs.ansible.com/ansible/latest/collections/community/sops/index.html"><img src="images/ansible_logo.png" alt="Ansible" height="100"></a></div>
+<div class="imageblock"><a class="image" href="https://github.com/jkroepke/helm-secrets/wiki/ArgoCD-Integration#installation-on-argo-cd"><img src="images/argocd_logo.svg" alt="ArgoCD" height="100"></a></div></div></div>
+<div class="openblock column fragment"><div class="content"><div class="imageblock"><a class="image" href="https://github.com/goabout/kustomize-sopssecretgenerator"><img src="images/kustomize_logo.png" alt="Kustomize" height="100"></a></div>
+<div class="imageblock"><a class="image" href="https://fluxcd.io/flux/guides/mozilla-sops/"><img src="images/flux_logo.png" alt="FluxCD" height="100"></a></div>
+<div class="paragraph"><p>Et plus encore !</p></div></div></div>
 <aside class="notes"><div class="paragraph"><p>Permet de stocker les secrets avec le code source de manière sécurisée
 - Connecteur SOPS &lt;&gt; outils déploiement
 - Alternative pour ceux qui ne veulent pas manager un Vault
@@ -1189,6 +1188,11 @@ hljs.highlightAll();
 </script><script src="reveal.js/plugin/menu/menu.js"></script>
 <script>
     Reveal.configure({
+        viewDistance: 6,
+        mobileViewDistance: 4,
+        hideInactiveCursor: true,
+        hash: true,
+        controls: false,
         menu: {
             side: 'right',
             openButton: false,
