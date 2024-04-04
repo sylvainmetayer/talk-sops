@@ -8,28 +8,22 @@ image::devoxx_conclusion.jpg[background, size=fill]
 plantuml::diagrams/02-recapitulatif.puml[format=svg, height=590]
 --
 
-[.column]
+[.column.fragment]
 --
-[.fragment]
 image::terraform_logo.svg[height=100,alt='Terraform',link=https://registry.terraform.io/providers/carlpett/sops/latest/docs]
 
-[.fragment]
 image::ansible_logo.png[height=100,alt='Ansible',link=https://docs.ansible.com/ansible/latest/collections/community/sops/index.html]
 
-[.fragment]
 image::argocd_logo.svg[height=100,alt='ArgoCD',link=https://github.com/jkroepke/helm-secrets/wiki/ArgoCD-Integration#installation-on-argo-cd]
 
 --
 
-[.column]
+[.column.fragment]
 --
-[.fragment]
 image::kustomize_logo.png[height=100,alt='Kustomize',link=https://github.com/goabout/kustomize-sopssecretgenerator]
 
-[.fragment]
 image::flux_logo.png[height=100,alt='FluxCD',link=https://fluxcd.io/flux/guides/mozilla-sops/]
 
-[.fragment]
 Et plus encore !
 --
 
