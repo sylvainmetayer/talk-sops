@@ -36,7 +36,7 @@ Permet de stocker les secrets avec le code source de manière sécurisée
 - https://taras.glek.net/post/github-to-sops-lighter-weight-secret-management/
 ****
 
-[.columns.transparency]
+[.columns.transparency%notitle.is-vcentered]
 == Merci !
 
 image::devoxx_conclusion_2.jpg[background, size=fill]
@@ -44,8 +44,13 @@ image::devoxx_conclusion_2.jpg[background, size=fill]
 [.column]
 --
 [caption=]
-.https://sops.talks.sylvain.dev
+.Slides
 image::slides_link.svg[height=300,alt='Slides']
+--
+
+[.column]
+--
+link:https://sylvain.dev[*sylvain.dev*]
 --
 
 [.column]
