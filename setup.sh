@@ -9,4 +9,4 @@ curl -sLo js/hightlight.min.js https://cdnjs.cloudflare.com/ajax/libs/highlight.
 
 #qrencode https://app.voxxr.in/events/devoxxfr2024/rate-talk/21890 -o images/openfeedback.svg -t SVG -l H -m 2
 # TODO For DevoxxFR, update with tagged version
-#qrencode https://sops.talks.sylvain.dev/ -o images/slides_link.svg -t SVG -l H -m 2
+#qrencode http://r.sylvain.dev/devoxxfr-2024-sops -o images/slides_link.svg -t SVG -l H -m 2
