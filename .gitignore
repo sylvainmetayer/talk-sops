@@ -9,7 +9,8 @@ reveal.js
 js/hightlight.min.js
 code/age.key
 code/*.secrets.yaml
-code/recipients/secrets.*.yaml
+code/recipients/envs/*.yaml
+!code/recipients/envs/.gitkeep
 code/recipients/*.key
 code/recipients/.sops.yaml
 
@@ -18,3 +19,5 @@ images/01-problematique.svg
 images/02-recapitulatif.svg
 
 code/demo-magic.sh
+code/secrets/*
+!code/secrets/.gitkeep

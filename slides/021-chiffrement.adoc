@@ -1,11 +1,21 @@
 [%auto-animate.is-full]
-== Chiffrement
+== Chiffrement d'un nouveau fichier
 
 [source%linenums,bash,data-id=cli-usage]
 ----
-sops -e --age \
+sops --age \
 age14trf5fvhkppd8suunru9mg7dkk9r6ndzwc7tnw45yufs2j9h3u9qqwttxu \
-plaintext.yaml > secrets.yaml
+secrets.yaml
+----
+
+[%auto-animate.is-full]
+=== Chiffrement d'un fichier existant
+
+[source%linenums,bash,data-id=cli-usage]
+----
+sops -e -i --age \
+age14trf5fvhkppd8suunru9mg7dkk9r6ndzwc7tnw45yufs2j9h3u9qqwttxu \
+secrets.yaml
 ----
 
 [%auto-animate]
@@ -13,9 +23,9 @@ plaintext.yaml > secrets.yaml
 
 [source%linenums,bash,data-id=cli-usage,highlight=1]
 ----
-sops -e --encrypted-suffix password --age \
+sops -e -i --encrypted-suffix password --age \
 age14trf5fvhkppd8suunru9mg7dkk9r6ndzwc7tnw45yufs2j9h3u9qqwttxu \
-plaintext.yaml > secrets.yaml
+secrets.yaml
 ----
 
 == Déchiffrement
@@ -53,3 +63,11 @@ EDITOR="code --wait" sops secrets.yaml
 
 [TIP]
 _--wait : Wait for the files to be closed before returning._
+
+=== Éxecution dans un processus
+
+[source%linenums,bash]
+----
+$ sops exec-env 01-sops-file.yaml 'echo $password'
+a secure password for DevoxxFR !
+----

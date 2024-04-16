@@ -1,20 +1,5 @@
 include::001-presentation.adoc[]
 
-== Problématique
-
-[.column]
---
-[.vertical-align-middle]
-image:public-secrets.webp[alt='Ton pire cauchemar', width=512, height=512]
---
-
-[.notes]
-****
-Des secrets à passer à nos applications, pour autant on ne veut pas avoir à les mettre à la main et on veut les centraliser.
-
-Pas de vault / secrets manager
-****
-
 [.columns.is-vcentered]
 == Cas d'usage
 
@@ -32,6 +17,7 @@ plantuml::diagrams/011-problematique-env.puml[format=svg]
 
 [.notes]
 ****
+- Des secrets à passer à nos applications, pour autant on ne veut pas avoir à les mettre à la main et on veut les centraliser.
 - Directement sur le cloud provider, mais cela nécessite configuration manuelle
 - À la main dans l'application ?
 - Dans un Vault ? Si non existant, c'est une brique en plus à maintenir

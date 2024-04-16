@@ -5,7 +5,7 @@ image::devoxx_conclusion.jpg[background, size=fill]
 
 [.column]
 --
-plantuml::diagrams/02-recapitulatif.puml[format=svg, height=590]
+plantuml::diagrams/02-recapitulatif.puml[format=svg,id=recap]
 --
 
 [.column.fragment]
@@ -59,3 +59,8 @@ link:https://sylvain.dev[*sylvain.dev*]
 .Vos retours
 image::openfeedback.svg[height=300,alt='Vos retours']
 --
+
+[.notes]
+****
+Si question sops edit : possible de créer un fichier sans partir de rien, si on a un .sops.yaml configuré
+****
