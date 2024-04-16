@@ -1,7 +1,7 @@
 [.columns.transparency]
 == Conclusion
 
-image::devoxx_conclusion.jpg[background, size=fill]
+image::devoxx/DevoxxFR2024_0058.jpg[background, size=fill]
 
 [.column]
 --
@@ -39,7 +39,7 @@ Permet de stocker les secrets avec le code source de manière sécurisée
 [.columns.transparency%notitle.is-vcentered]
 == Merci !
 
-image::devoxx_conclusion_2.jpg[background, size=fill]
+image::devoxx/DevoxxFR2024_0044.jpg[background, size=fill]
 
 [.column]
 --

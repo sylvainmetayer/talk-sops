@@ -20,7 +20,7 @@
     letter-spacing: normal;
 }
 
-.reveal section.title h1+.preamble > .paragraph > p {
+.reveal section.title h1 + .preamble > .paragraph > p {
     color: white;
     font-size: 50px;
     font-weight: 700;
@@ -38,7 +38,7 @@ body::after {
     color: white;
 }
 
-.reveal section h1+div.preamble>div.paragraph>p {
+.reveal section h1 + div.preamble > div.paragraph > p {
     color: white;
 }
 
@@ -117,7 +117,12 @@ img {
     filter: blur(4px);
 }
 
+#_cas_dusage img {
+    border: black 1px solid;
+}
+
 #recap img {
     position: absolute;
     left: 15%;
+    border: black 1px solid;
 }

@@ -5,7 +5,7 @@ include::022-destinataires.adoc[]
 [.transparency]
 == Démo
 
-image::devoxx_demo.jpg[background, size=fill]
+image::devoxx/DevoxxFR2024_0028.jpg[background, size=fill]
 
 `./demo.sh`
 
