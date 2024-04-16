@@ -116,3 +116,8 @@ img {
 .blur {
     filter: blur(4px);
 }
+
+#recap img {
+    position: absolute;
+    left: 15%;
+}
