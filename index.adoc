@@ -11,7 +11,7 @@
 :revealjs_history: true
 :revealjs_pdfseparatefragments: false
 :revealjs_width: 1200
-:title-slide-background-image: intro_devoxx.jpg
+:title-slide-background-image: devoxx/intro_devoxx.jpg
 :title-slide-background-size: fill
 :title-slide-filter: blur(4px)
 :stylesdir: css

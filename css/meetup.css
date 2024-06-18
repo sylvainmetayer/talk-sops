@@ -28,7 +28,7 @@
 }
 
 body::after {
-    content: url("../images/devoxx_logo.png");
+    content: url("../images/breizhcamp/logo_text.png");
     position: fixed;
     left: 0;
     bottom: 10px;

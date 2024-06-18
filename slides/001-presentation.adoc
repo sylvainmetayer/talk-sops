@@ -13,6 +13,9 @@ image::photo.png[]
 Sylvain MÉTAYER
 
 link:https://sylvain.dev[]
+
+Tech Lead link:https://www.groupeonepoint.com/fr/[@Onepoint]
+
 --
 
 [.column]
@@ -20,7 +23,8 @@ link:https://sylvain.dev[]
 [.vertical-align-middle]
 image:logo.png[width=250]
 
-Tech Lead link:https://www.groupeonepoint.com/fr/[@Onepoint]
+image::qualiopi.png[]
+
 --
 
 [.notes]
