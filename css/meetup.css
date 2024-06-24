@@ -28,9 +28,9 @@
 }
 
 body::after {
-    content: url("../images/breizhcamp/logo_text.png");
+    content: url("../images/breizhcamp/logo.png");
     position: fixed;
-    left: 0;
+    left: 10px;
     bottom: 10px;
 }
 
