@@ -16,14 +16,16 @@ link:https://sylvain.dev[]
 
 Tech Lead link:https://www.groupeonepoint.com/fr/[@Onepoint]
 
+image:logo.png[width=250]
 --
 
 [.column]
 --
 [.vertical-align-middle]
-image:logo.png[width=250]
 
 image::qualiopi.png[]
+
+image::ecole_onepoint.svg[height=200]
 
 --
 

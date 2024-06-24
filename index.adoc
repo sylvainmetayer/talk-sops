@@ -1,7 +1,8 @@
 = SOPS, passez un savon à vos secrets en clair !
 :docinfo: private
 :source-highlighter: highlight.js
-:highlightjsdir: js
+:highlightjs-theme: js/highlight/styles/base16/solarized-light.min.css
+:highlightjsdir: js/highlight
 :autofit-option:
 :icons!:
 :iconfont-remote!:

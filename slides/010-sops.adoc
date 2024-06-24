@@ -7,7 +7,7 @@ image::logo_sops.png[]
 
 https://github.com/getsops/sops
 
-Installation avec link:https://asdf.talks.sylvain.dev/[asdf]footnote:[Instant pub !]
+Installation avec link:https://r.sylvain.dev/breizhcamp-2024-asdf[asdf]footnote:[Instant pub !]
 --
 
 [.column.is-three-fifths]
@@ -18,6 +18,7 @@ Installation avec link:https://asdf.talks.sylvain.dev/[asdf]footnote:[Instant pu
 - Outil auto-suffisant
 - Types de fichiers : `yaml, json, ini, .env`
 --
+
 
 [.notes]
 ****

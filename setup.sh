@@ -5,8 +5,5 @@ curl -sLo code/demo-magic.sh https://raw.githubusercontent.com/paxtonhare/demo-m
 git clone https://github.com/hakimel/reveal.js --depth 1 --branch 5.0.5
 git clone https://github.com/denehyg/reveal.js-menu --depth 1 --branch 2.1.0 reveal.js/plugin/menu
 cd reveal.js && npm ci && npm run build && cd ../
-curl -sLo js/hightlight.min.js https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.3/highlight.min.js
-
-#qrencode LINK -o images/openfeedback.svg -t SVG -l H -m 2
-# TODO For Breizh Camp, update with tagged version
-#qrencode http://r.sylvain.dev/breizhcamp-2024-sops -o images/slides_link.svg -t SVG -l H -m 2
+git clone git@github.com:highlightjs/highlight.js.git --depth=1 -b 11.9.0
+cd highlight.js && npm ci && npm run build-cdn && cp -r build/highlight.min.js build/styles ../js/highlight
