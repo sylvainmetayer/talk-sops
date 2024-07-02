@@ -1,8 +1,6 @@
 [.columns.transparency]
 == Conclusion
 
-image::devoxx/DevoxxFR2024_0058.jpg[background, size=fill]
-
 [.column]
 --
 plantuml::diagrams/02-recapitulatif.puml[format=svg,id=recap]

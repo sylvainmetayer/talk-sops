@@ -12,9 +12,10 @@
 :revealjs_history: true
 :revealjs_pdfseparatefragments: false
 :revealjs_width: 1200
-:title-slide-background-image: devoxx/intro_devoxx.jpg
-:title-slide-background-size: fill
-:title-slide-filter: blur(4px)
+:title-slide-background-image: sunnytech/background.png
+:title-slide-background-repeat: repeat
+:title-slide-background-size: auto
+// //:title-slide-filter: blur(4px)
 :stylesdir: css
 :customcss: css/meetup.css
 :imagesdir: images
@@ -25,6 +26,7 @@
 :warning-caption: ⚠️
 :caution-caption: 🚨
 :example-caption: ✏️
+
 
 @sylvain_metayer
 
