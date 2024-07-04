@@ -1,0 +1,44 @@
+[%auto-animate]
+== Support des documents YAML
+
+.tls.k8s_secret.yaml
+[source%linenums,yaml]
+----
+---
+apiVersion: v1
+kind: Secret
+data:
+    tls.crt: mon-certificat-preprod
+    tls.key: ma-cle-preprod
+metadata:
+    name: preprod-tls
+type: kubernetes.io/tls
+---
+apiVersion: v1
+kind: Secret
+data:
+    tls.crt: mon-certificat-prod
+    tls.key: ma-cle-prod
+metadata:
+    name: prod-tls
+type: kubernetes.io/tls
+----
+
+[.notes]
+****
+Si on fait du Kubernetes, il arrive que l'on déclare parfois plusieurs ressources dans un même fichier YAML
+****
+
+[%auto-animate]
+== Support des documents YAML
+
+.tls.k8s_secret.yaml
+[source%linenums,yaml,highlight=1..28|29..57]
+----
+include::../code/tls.k8s_secret.yaml[]
+----
+
+[.notes]
+****
+Si on fait du Kubernetes, il arrive que l'on déclare parfois plusieurs ressources dans un même fichier YAML
+****

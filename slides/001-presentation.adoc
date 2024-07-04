@@ -21,7 +21,7 @@ Tech Lead link:https://www.groupeonepoint.com/fr/[@Onepoint]
 [.vertical-align-middle]
 image:logo.png[width=250]
 
-image::qualiopi.png[]
+// image::qualiopi.png[]
 --
 
 [.notes]

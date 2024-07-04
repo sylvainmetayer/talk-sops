@@ -2,6 +2,8 @@ include::021-chiffrement.adoc[]
 
 include::022-destinataires.adoc[]
 
+include::023-yaml-documents.adoc[]
+
 [.transparency]
 == Démo
 
@@ -10,6 +12,8 @@ include::022-destinataires.adoc[]
 [.notes]
 ****
 ~5min
+
+DEMO-20.SH !!!
 ****
 
 [%auto-animate]

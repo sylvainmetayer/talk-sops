@@ -59,3 +59,36 @@ pe "export SOPS_AGE_KEY_FILE=$(pwd)/alice.key"
 pei "sops -d envs/secrets.prod.yaml"
 
 wait
+clear
+p "Bob souhaite désormais modifier les secrets de développement, sur lesquels il a les droits !"
+p "cat envs/secrets.dev.yaml"
+bat -r 1:4 -r 9:18  --theme Coldark-Cold envs/secrets.dev.yaml
+
+# Backup
+cp envs/secrets.dev.yaml envs/secrets.dev.yaml.bck
+
+p "Il souhaite mettre à jour le nom d'utilisateur"
+pe "sed -i 's/admin/super_admin/' envs/secrets.dev.yaml"
+
+p "Ligne modifiée, fichier commit / push, et quelques jours plus tard, on souhaite mettre à jour le secret..."
+pe "sops -d envs/secrets.dev.yaml || true"
+
+wait
+clear
+p "Que se passe-t-il ?"
+bat -r 1 -r 29  --theme Coldark-Cold envs/secrets.dev.yaml
+# Explication que même si valeur en clair, intégrité du fichier n'est plus valide car HMAC différente.
+wait
+clear
+p "Restaurons le fichier à sa version antérieure et voyons ce que Bob aurait du faire.."
+cp envs/secrets.dev.yaml.bck envs/secrets.dev.yaml
+pe "sops envs/secrets.dev.yaml"
+
+p "Et désormais, notre fichier est bien valide et le HMAC a bien changé"
+p "diff envs/secrets.dev.yaml envs/secrets.dev.yaml.bck"
+diff envs/secrets.dev.yaml.bck envs/secrets.dev.yaml  | bat -ldiff
+
+wait
+pe "sops -d envs/secrets.dev.yaml"
+rm envs/secrets.dev.yaml.bck
+wait

@@ -13,7 +13,7 @@ Installation avec link:https://r.sylvain.dev/breizhcamp-2024-asdf[asdf]
 [.column.is-three-fifths]
 --
 [%step]
-- Depuis 2016
+- Depuis link:https://github.com/getsops/sops?tab=readme-ov-file#authors[2015]
 - link:https://www.cncf.io/projects/sops/[CNCF Sandbox]
 - Outil auto-suffisant
 - Types de fichiers : `yaml, json, ini, .env`
@@ -22,8 +22,7 @@ Installation avec link:https://r.sylvain.dev/breizhcamp-2024-asdf[asdf]
 
 [.notes]
 ****
-- CNCF Sandbox depuis May 17, 2023 : Gouvernance
-- Pub sujet ASDF
+- Lancé par Mozilla puis donné à CNCF Sandbox depuis May 17, 2023 : Gouvernance
 - Ne nécessite pas de serveur centralisé (et donc la maintenance de ce dernier). Alternative viable en cas de non-dispo de vault et/ou autre.
 - SOPS permet de chiffrer des données dans un fichier à l'aide de plusieurs méthodes de chiffrements (SOPS, KMS...).
 ****
