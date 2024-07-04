@@ -418,8 +418,7 @@ ul.byline li + li {
 <div class="openblock column is-3 has-text-left medium"><div class="content"><div class="paragraph"><p>Sylvain MÉTAYER</p></div>
 <div class="paragraph"><p><a href="https://sylvain.dev" class="bare">https://sylvain.dev</a></p></div>
 <div class="paragraph"><p>Tech Lead <a href="https://www.groupeonepoint.com/fr/">@Onepoint</a></p></div></div></div>
-<div class="openblock column"><div class="content"><div class="paragraph vertical-align-middle"><p><span class="image"><img src="images/logo.png" alt="logo" width="250"></span></p></div>
-<div class="imageblock"><img src="images/qualiopi.png" alt="qualiopi"></div></div></div>
+<div class="openblock column"><div class="content"><div class="paragraph vertical-align-middle"><p><span class="image"><img src="images/logo.png" alt="logo" width="250"></span></p></div></div></div>
 <aside class="notes"><div class="paragraph"><p>Conteneur / k8s quotidien, stocke/interagit secrets appli</p></div></aside></div></section>
 <section id="_cas_dusage" class="columns is-vcentered"><h2>Cas d&#8217;usage</h2><div class="slide-content"><div class="paragraph"><p><em>Où persister la valeur des secrets ?</em></p></div>
 <div class="openblock column is-two-fifths"><div class="content"><div class="imageblock"><img src="images/010-problematique.svg" alt="Diagram"></div></div></div>
@@ -428,8 +427,8 @@ ul.byline li + li {
 <section id="_secrets_operations" class="columns is-vcentered"><div class="slide-content"><div class="openblock column is-two-fifths"><div class="content"><div class="imageblock"><img src="images/logo_sops.png" alt="logo sops"></div>
 <div class="paragraph"><p><a href="https://github.com/getsops/sops" class="bare">https://github.com/getsops/sops</a></p></div>
 <div class="paragraph"><p>Installation avec <a href="https://r.sylvain.dev/breizhcamp-2024-asdf">asdf</a></p></div></div></div>
-<div class="openblock column is-three-fifths"><div class="content"><div class="ulist"><ul><li class="fragment"><p>Depuis 2016</p></li><li class="fragment"><p><a href="https://www.cncf.io/projects/sops/">CNCF Sandbox</a></p></li><li class="fragment"><p>Outil auto-suffisant</p></li><li class="fragment"><p>Types de fichiers : <code>yaml, json, ini, .env</code></p></li></ul></div></div></div>
-<aside class="notes"><div class="ulist"><ul><li><p>CNCF Sandbox depuis May 17, 2023 : Gouvernance</p></li><li><p>Pub sujet ASDF</p></li><li><p>Ne nécessite pas de serveur centralisé (et donc la maintenance de ce dernier). Alternative viable en cas de non-dispo de vault et/ou autre.</p></li><li><p>SOPS permet de chiffrer des données dans un fichier à l&#8217;aide de plusieurs méthodes de chiffrements (SOPS, KMS&#8230;&#8203;).</p></li></ul></div></aside></div></section>
+<div class="openblock column is-three-fifths"><div class="content"><div class="ulist"><ul><li class="fragment"><p>Depuis <a href="https://github.com/getsops/sops?tab=readme-ov-file#authors">2015</a></p></li><li class="fragment"><p><a href="https://www.cncf.io/projects/sops/">CNCF Sandbox</a></p></li><li class="fragment"><p>Outil auto-suffisant</p></li><li class="fragment"><p>Types de fichiers : <code>yaml, json, ini, .env</code></p></li></ul></div></div></div>
+<aside class="notes"><div class="ulist"><ul><li><p>Lancé par Mozilla puis donné à CNCF Sandbox depuis May 17, 2023 : Gouvernance</p></li><li><p>Ne nécessite pas de serveur centralisé (et donc la maintenance de ce dernier). Alternative viable en cas de non-dispo de vault et/ou autre.</p></li><li><p>SOPS permet de chiffrer des données dans un fichier à l&#8217;aide de plusieurs méthodes de chiffrements (SOPS, KMS&#8230;&#8203;).</p></li></ul></div></aside></div></section>
 <section><section id="_exemple" data-auto-animate><h2>Exemple</h2><div class="slide-content"><div class="listingblock"><div class="title">file.yml</div><div class="content"><pre class="highlightjs highlight" data-id="sample-sops"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="" data-lang="yaml">password: a secure password for SunnyTech ☀️️️ !</code></pre></div></div></div></section><section id="_structure_dun_fichier" data-auto-animate><h2>Structure d&#8217;un fichier</h2><div class="slide-content"><div class="listingblock"><div class="title">secrets.yml</div><div class="content"><pre class="highlightjs highlight" data-id="sample-sops"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="1|7,8,9,10,11,12,13,14,15,16|17,18,19,20,21" data-lang="yaml">password: ENC[AES256_GCM,data:K3prPdbadC91icPzyBe0+go9HBtYutskDGSNbM52knpvc/GD1t1vAIl4YRQnAw==,iv:oqlCCwSI2PCK/CGp9fMp7Uj2qKTydsSJZmrrijOoHJY=,tag:nUfQmoArPY3bnomsPuik7g==,type:str]
 sops:
     kms: []
@@ -484,8 +483,86 @@ sops -r -i --rm-age PUB_KEY secrets.yaml</code></pre></div></div>
       - age:
           - age1pcutm2ytcnn5t2zpj4dvvqhzxw5dcj0gfqplevtev7h8j9hf397s22uacq</code></pre></div></div></div></div>
 <aside class="notes"><div class="paragraph"><p>Attention, si permission de voir = permission d&#8217;éditer.</p></div></aside></div></section>
+<section id="_support_des_documents_yaml" data-auto-animate><h2>Support des documents YAML</h2><div class="slide-content"><div class="listingblock"><div class="title">tls.k8s_secret.yaml</div><div class="content"><pre class="highlightjs highlight"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="" data-lang="yaml">---
+apiVersion: v1
+kind: Secret
+data:
+    tls.crt: mon-certificat-preprod
+    tls.key: ma-cle-preprod
+metadata:
+    name: preprod-tls
+type: kubernetes.io/tls
+---
+apiVersion: v1
+kind: Secret
+data:
+    tls.crt: mon-certificat-prod
+    tls.key: ma-cle-prod
+metadata:
+    name: prod-tls
+type: kubernetes.io/tls</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Si on fait du Kubernetes, il arrive que l&#8217;on déclare parfois plusieurs ressources dans un même fichier YAML</p></div></aside></div></section>
+<section id="_support_des_documents_yaml_2" data-auto-animate><h2>Support des documents YAML</h2><div class="slide-content"><div class="listingblock"><div class="title">tls.k8s_secret.yaml</div><div class="content"><pre class="highlightjs highlight"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28|29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57" data-lang="yaml">apiVersion: v1
+kind: Secret
+data:
+    tls.crt: ENC[AES256_GCM,data:yhqqbp+xcYdotBdMsAReHqjK/mRz1A==,iv:aDQatfjwRABdtBk9CYrPl12TP1d8/f0OaIi+1o7aVQo=,tag:xyBNiHJ2ktENTpgBS955cA==,type:str]
+    tls.key: ENC[AES256_GCM,data:KfYfpul+BEKr6HUttLc=,iv:1tzQf72XEXNHRepaS4WKmQjvF2XQezDtvuqxqJVT3yw=,tag:g73pHvj31Ha7JFSNEAVPFw==,type:str]
+metadata:
+    name: preprod-tls
+type: kubernetes.io/tls
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age16rspnzt6j2qxa2587t6umh9qykrqu2amrr0hx9xt2z7elyky3a3q4p5s7l
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBJVE1peU1zb2xGSlpiVVFP
+            cXZEWnYzZ1gwNzFwdWdYanRISTgwM0tickRjClJ0QlBEUjhGb253aHQ5ek9vNDlC
+            UGZSK2RNSjZhbEpvczh1Q0ZRdldLb0UKLS0tIGRnNmplSG5kaWE0SXRma3dFTEEx
+            YXBkN3hoTDBhNFlnL0E3QXJzWWsvNVkK5KWG0DaTK1t57H9hJxdNoujIoL+Mrij5
+            EhgjkrMfqbz+KmWcvnYwJs1nmthscEDyGGMUXQ2Pc3GpqahDSTJtGg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-07-04T13:48:20Z"
+    mac: ENC[AES256_GCM,data:HHfd96ET1M+W42NWq0L3Pia69qEB5B6WHgKD5FIGIVwpG/gpPSxDorOFA1lBqdHpkFExH5bvRnBOl72ZIkMs5MwVK9jm+YkIRsd5NpgiaXHQjEGsBuE1IqHrbGC4Q5qON4VtseFqL03StgCWCIpBMEo6VZp6XI++ByuWdkPSkeA=,iv:ly6mCmTfk1ND0NutIA5aLEF/iwQj4ooKcmEPzPRD++0=,tag:11Sv7MJ4ZNOWLXCtABOsZQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.0
+---
+apiVersion: v1
+kind: Secret
+data:
+    tls.crt: ENC[AES256_GCM,data:B+1GVfvEkYztUW84XXxMi1/oww==,iv:k9vqw2WQSd5U9pdc7heIwC0yGwJ8cpzy2BTjHdUtf9U=,tag:OoNSaCedDck26hnCG4+YZg==,type:str]
+    tls.key: ENC[AES256_GCM,data:+WELpbjtuVS8EmI=,iv:1GtWQW/xv40E1ud0IMvQwJgndECWZVjfFvjApuD6AG8=,tag:kyZDmcIaic10bhJkAc8goQ==,type:str]
+metadata:
+    name: prod-tls
+type: kubernetes.io/tls
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age16rspnzt6j2qxa2587t6umh9qykrqu2amrr0hx9xt2z7elyky3a3q4p5s7l
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBJVE1peU1zb2xGSlpiVVFP
+            cXZEWnYzZ1gwNzFwdWdYanRISTgwM0tickRjClJ0QlBEUjhGb253aHQ5ek9vNDlC
+            UGZSK2RNSjZhbEpvczh1Q0ZRdldLb0UKLS0tIGRnNmplSG5kaWE0SXRma3dFTEEx
+            YXBkN3hoTDBhNFlnL0E3QXJzWWsvNVkK5KWG0DaTK1t57H9hJxdNoujIoL+Mrij5
+            EhgjkrMfqbz+KmWcvnYwJs1nmthscEDyGGMUXQ2Pc3GpqahDSTJtGg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-07-04T13:48:20Z"
+    mac: ENC[AES256_GCM,data:HHfd96ET1M+W42NWq0L3Pia69qEB5B6WHgKD5FIGIVwpG/gpPSxDorOFA1lBqdHpkFExH5bvRnBOl72ZIkMs5MwVK9jm+YkIRsd5NpgiaXHQjEGsBuE1IqHrbGC4Q5qON4VtseFqL03StgCWCIpBMEo6VZp6XI++ByuWdkPSkeA=,iv:ly6mCmTfk1ND0NutIA5aLEF/iwQj4ooKcmEPzPRD++0=,tag:11Sv7MJ4ZNOWLXCtABOsZQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.0</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Si on fait du Kubernetes, il arrive que l&#8217;on déclare parfois plusieurs ressources dans un même fichier YAML</p></div></aside></div></section>
 <section id="_démo" class="transparency"><h2>Démo</h2><div class="slide-content"><div class="paragraph"><p><code>./demo.sh</code></p></div>
-<aside class="notes"><div class="paragraph"><p>~5min</p></div></aside></div></section>
+<aside class="notes"><div class="paragraph"><p>~5min</p></div>
+<div class="paragraph"><p>DEMO-20.SH !!!</p></div></aside></div></section>
 <section><section id="_pas_très_lisible_tout_ça" data-auto-animate><h2>Pas très lisible tout ça ?</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-text hljs" data-noescape="true" data-line-numbers="7,8" data-lang="text">$ git diff 34526..3933
 diff --git a/code/recipients/example-diff-secrets.yaml b/code/recipients/example-diff-secrets.yaml
 index be346d4..7210f74 100644
