@@ -15,7 +15,7 @@ clear
 p "Alice et Bob travaillent sur un projet avec 2 environnements, mais seule Alice doit avoir accès aux secrets de production"
 echo "(Sérieusement, Alice et Bob, t'avais plus plus d'inspiration ?)"
 
-pe "cat envs/secrets.dev.yaml"
+p "cat envs/secrets.dev.yaml"
 bat --theme Coldark-Cold envs/secrets.dev.yaml
 wait
 clear

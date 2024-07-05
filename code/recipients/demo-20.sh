@@ -15,7 +15,7 @@ clear
 p "Alice et Bob travaillent sur un projet avec 2 environnements, mais seule Alice doit avoir accès aux secrets de production"
 echo "(Sérieusement, Alice et Bob, t'avais plus plus d'inspiration ?)"
 
-pe "cat envs/secrets.dev.yaml"
+p "cat envs/secrets.dev.yaml"
 bat --theme Coldark-Cold envs/secrets.dev.yaml
 wait
 clear
@@ -71,7 +71,7 @@ p "Il souhaite mettre à jour le nom d'utilisateur"
 pe "sed -i 's/admin/super_admin/' envs/secrets.dev.yaml"
 
 p "Ligne modifiée, fichier commit / push, et quelques jours plus tard, on souhaite mettre à jour le secret..."
-pe "sops -d envs/secrets.dev.yaml || true"
+pe "sops envs/secrets.dev.yaml || true"
 
 wait
 clear
