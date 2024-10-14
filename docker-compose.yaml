@@ -1,0 +1,8 @@
+services:
+  asciidoctor:
+    image: asciidoctor/docker-asciidoctor:1.67
+    command: asciidoctor-revealjs -r asciidoctor-diagram index.adoc
+    volumes:
+      - .:/documents
+    working_dir: /documents
+    # remove: true

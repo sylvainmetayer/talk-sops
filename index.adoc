@@ -12,7 +12,7 @@
 :revealjs_history: true
 :revealjs_pdfseparatefragments: false
 :revealjs_width: 1200
-:title-slide-background-image: sunnytech/background.png
+:title-slide-background-image: devfest-toulouse/background.png
 :title-slide-background-repeat: repeat
 :title-slide-background-size: auto
 // //:title-slide-filter: blur(4px)
