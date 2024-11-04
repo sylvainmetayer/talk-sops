@@ -129,3 +129,7 @@ img {
     left: 15%;
     border: black 1px solid;
 }
+
+#prize p {
+    font-size: small;
+}
