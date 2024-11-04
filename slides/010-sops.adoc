@@ -7,7 +7,7 @@ image::logo_sops.png[]
 
 https://github.com/getsops/sops
 
-Installation avec link:https://r.sylvain.dev/breizhcamp-2024-asdf[asdf]
+// Installation avec link:https://r.sylvain.dev/breizhcamp-2024-asdf[asdf]
 --
 
 [.column.is-three-fifths]

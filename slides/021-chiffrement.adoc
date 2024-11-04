@@ -69,5 +69,5 @@ _--wait : Wait for the files to be closed before returning._
 [source%linenums,bash]
 ----
 $ sops exec-env 01-sops-file.yaml 'echo $password'
-a secure password for SunnyTech ☀️️️ !
+a secure password for DevFest Toulouse !
 ----
