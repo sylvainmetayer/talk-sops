@@ -12,18 +12,15 @@ Sylvain MÉTAYER
 
 link:https://sylvain.dev[]
 
-Tech Lead link:https://www.groupeonepoint.com/fr/[@Onepoint]
 
 --
 
-[.column]
+[.column.is-3]
 --
 [.vertical-align-middle]
 image:logo.png[width=250]
 
-image::prize.svg[]
-[#prize]
-Flashez pour participer au tirage au sort
+Tech Lead link:https://www.groupeonepoint.com/fr/[@Onepoint]
 --
 
 [.notes]

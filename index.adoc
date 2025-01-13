@@ -12,7 +12,7 @@
 :revealjs_history: true
 :revealjs_pdfseparatefragments: false
 :revealjs_width: 1200
-:title-slide-background-image: devfest-toulouse/background.png
+:title-slide-background-image: snowcamp/background2.png
 :title-slide-background-repeat: repeat
 :title-slide-background-size: auto
 // //:title-slide-filter: blur(4px)
@@ -27,10 +27,10 @@
 :caution-caption: 🚨
 :example-caption: ✏️
 
-
 @sylvain_metayer
 
 include::slides/000-intro.adoc[]
 include::slides/010-sops.adoc[]
 include::slides/020-demo-usage.adoc[]
 include::slides/030-conclusion.adoc[]
+

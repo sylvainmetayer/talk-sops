@@ -34,6 +34,11 @@ Permet de stocker les secrets avec le code source de manière sécurisée
 - https://taras.glek.net/post/github-to-sops-lighter-weight-secret-management/
 ****
 
+[%notitle]
+== Sponsors
+
+image::snowcamp/sponsors.png[background, size=contain]
+
 [.columns.transparency%notitle.is-vcentered]
 == Merci !
 
