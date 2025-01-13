@@ -31,7 +31,7 @@
 
 body::after {
     background-color: rgba(0, 0, 0, 0.1);
-    content: url("../images/devfest-toulouse/logo.png");
+    content: url("../images/snowcamp/logo2.png");
     position: fixed;
     left: 10px;
     bottom: 10px;
