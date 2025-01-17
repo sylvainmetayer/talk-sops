@@ -1,6 +1,6 @@
 services:
   asciidoctor:
-    image: asciidoctor/docker-asciidoctor:1.79
+    image: asciidoctor/docker-asciidoctor:1.82
     command: asciidoctor-revealjs -r asciidoctor-diagram index.adoc
     volumes:
       - .:/documents
