@@ -428,7 +428,7 @@ ul.byline li + li {
 <div class="paragraph"><p><a href="https://github.com/getsops/sops" class="bare">https://github.com/getsops/sops</a></p></div></div></div>
 <div class="openblock column is-three-fifths"><div class="content"><div class="ulist"><ul><li class="fragment"><p>Depuis <a href="https://github.com/getsops/sops?tab=readme-ov-file#authors">2015</a></p></li><li class="fragment"><p><a href="https://www.cncf.io/projects/sops/">CNCF Sandbox</a></p></li><li class="fragment"><p>Outil auto-suffisant</p></li><li class="fragment"><p>Types de fichiers : <code>yaml, json, ini, .env</code></p></li></ul></div></div></div>
 <aside class="notes"><div class="ulist"><ul><li><p>Lancé par Mozilla puis donné à CNCF Sandbox depuis May 17, 2023 : Gouvernance</p></li><li><p>Ne nécessite pas de serveur centralisé (et donc la maintenance de ce dernier). Alternative viable en cas de non-dispo de vault et/ou autre.</p></li><li><p>SOPS permet de chiffrer des données dans un fichier à l&#8217;aide de plusieurs méthodes de chiffrements (SOPS, KMS&#8230;&#8203;).</p></li></ul></div></aside></div></section>
-<section><section id="_exemple" data-auto-animate><h2>Exemple</h2><div class="slide-content"><div class="listingblock"><div class="title">file.yml</div><div class="content"><pre class="highlightjs highlight" data-id="sample-sops"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="" data-lang="yaml">password: a secure password for SnowCamp !</code></pre></div></div></div></section><section id="_structure_dun_fichier" data-auto-animate><h2>Structure d&#8217;un fichier</h2><div class="slide-content"><div class="listingblock"><div class="title">secrets.yml</div><div class="content"><pre class="highlightjs highlight" data-id="sample-sops"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="1|7,8,9,10,11,12,13,14,15,16|17,18,19,20,21" data-lang="yaml">password: ENC[AES256_GCM,data:xpKxoaBY3mHMkDYavkRxqOpTTJ2gtcY1so2C5tiOVbk=,iv:XMejDCXXj1i/rIVcniE81FQ04BYZvadmSLIvugvBA4I=,tag:fwqITd/6TTUOKZs/e6vEQA==,type:str]
+<section><section id="_exemple" data-auto-animate><h2>Exemple</h2><div class="slide-content"><div class="listingblock"><div class="title">file.yml</div><div class="content"><pre class="highlightjs highlight" data-id="sample-sops"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="" data-lang="yaml">password: a secure password for SnowCamp !</code></pre></div></div></div></section><section id="_structure_dun_fichier" data-auto-animate><h2>Structure d&#8217;un fichier</h2><div class="slide-content"><div class="listingblock"><div class="title">secrets.yml</div><div class="content"><pre class="highlightjs highlight" data-id="sample-sops"><code class="language-yaml hljs" data-noescape="true" data-line-numbers="1|7,8,9,10,11,12,13,14,15,16|17,18,19,20,21" data-lang="yaml">password: ENC[AES256_GCM,data:FB+0YFAOJLbpVCKQErDshbN3PHp+Nkl/XE3epl5d7gU=,iv:W85IMfQ/tRh9vR8cHprIqNaloq33Rk2oLfseZCPKo+w=,tag:KIlFXcEnU+5msPX27WPXMQ==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -444,11 +444,11 @@ sops:
             NFhQR2VWTFcwMkhoMEpjOUxWbXVCdkEKs+47mS6jYpm5LYlq+NEIOwpqvyLtfsyS
             FmyNQh3Ob1CL/1iNaCQsZeFV/k763AIJ4JT6M2hdiQCoVNNJUBwrXw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-01-13T12:43:18Z"
-    mac: ENC[AES256_GCM,data:Vuk3PFUykANZrA4IiKH3w7fKNXkdC2DQwY9XujfboBOwDV/gdx+yr2Bhf2O7FMe+M+SqfzUaLGUkt8/ZRfLBFUYEWYMoztVZtocBAnmM/m1DCy81r3dLfWPn0IdbhIiuMYxNoZ+JCKOELY8fZxC55G5Jjq3X/a98FbIHl1pMHD0=,iv:2YolZFKTFiv0ULPb4BoWm3Ie4MnEwNH7OvQO2o7Qpc4=,tag:3H1NPP/C+95cIk6IxfHU4g==,type:str]
+    lastmodified: "2025-01-22T22:13:27Z"
+    mac: ENC[AES256_GCM,data:ng4+ZlqCCcL8nRSWhVk+wqavuo+r1Xzk0U/ceKDiJH4FdqXpz9liAXbNlFV1dKN7qBd8YdffkIEs20dUiR16pSVMwKtrobT4JjOhBGjn5+L5KGSmljH5yILSdvZ1kIJSFl4urj35w8A5PLXl67sSafsix2hCAox6SNdyeaCuZ7s=,iv:GhKNCl7drza9emZyWSmDQsF+41fBkJ4Xo1HdDF8fL1s=,tag:3piVmGv2OKmw8QKjpSxhnA==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
-    version: 3.9.2</code></pre></div></div>
+    version: 3.9.3</code></pre></div></div>
 <aside class="notes"><div class="ulist"><ul><li><p>Chiffrement symétrique pour le contenu du fichier (même clé de chiffrement pour tous les destinataires)</p></li><li><p>Chiffrément asymétrique de la clé de chiffrement pour chaque destinaire avec sa clé publique</p></li><li><p>Seule la valeur est chiffrée</p></li><li><p>Metadata sops incluse dans le fichier, ainsi que les destinataires.</p></li><li><p>Tant qu&#8217;un des destinataires a accès au fichier, il est possible de lire et modifier le contenu.</p></li></ul></div></aside></div></section><section id="_méthodes_de_chiffrement" class="columns is-vcentered"><h2>Méthodes de chiffrement</h2><div class="slide-content"><div class="openblock column is-one-fifths"><div class="content"><div class="paragraph"><p>Chiffrement avec <a href="https://github.com/FiloSottile/age">age</a><sup class="footnote">[<span class="footnote" title="View footnote.">1</span>]</sup></p></div></div></div>
 <div class="openblock column is-four-fifths"><div class="content"><div class="paragraph"><p>Exemple de clé age</p></div>
 <div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-bash hljs" data-noescape="true" data-lang="bash">$ age-keygen
@@ -508,6 +508,7 @@ data:
     tls.key: ENC[AES256_GCM,data:KfYfpul+BEKr6HUttLc=,iv:1tzQf72XEXNHRepaS4WKmQjvF2XQezDtvuqxqJVT3yw=,tag:g73pHvj31Ha7JFSNEAVPFw==,type:str]
 metadata:
     name: preprod-tls
+    namespace: default
 type: kubernetes.io/tls
 sops:
     kms: []
@@ -524,11 +525,11 @@ sops:
             YXBkN3hoTDBhNFlnL0E3QXJzWWsvNVkK5KWG0DaTK1t57H9hJxdNoujIoL+Mrij5
             EhgjkrMfqbz+KmWcvnYwJs1nmthscEDyGGMUXQ2Pc3GpqahDSTJtGg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-07-04T13:48:20Z"
-    mac: ENC[AES256_GCM,data:HHfd96ET1M+W42NWq0L3Pia69qEB5B6WHgKD5FIGIVwpG/gpPSxDorOFA1lBqdHpkFExH5bvRnBOl72ZIkMs5MwVK9jm+YkIRsd5NpgiaXHQjEGsBuE1IqHrbGC4Q5qON4VtseFqL03StgCWCIpBMEo6VZp6XI++ByuWdkPSkeA=,iv:ly6mCmTfk1ND0NutIA5aLEF/iwQj4ooKcmEPzPRD++0=,tag:11Sv7MJ4ZNOWLXCtABOsZQ==,type:str]
+    lastmodified: "2025-01-22T22:14:19Z"
+    mac: ENC[AES256_GCM,data:D7uLrzR6lq0YGnmnBBlSLFLTNyA61p9oEp11tYafRA2fRxH6T8QgvkU1EbpwurZqpLe0bMtJePA2An0gZAPzYcbwrJfwzL/EEyvAEI82akd8qjbwm1YcBb/X2wdCYPJrWlzMB7hxLttzvdzLarkLYTGB2L9HvOh1/0SKTSvf2kI=,iv:A0TIl/k49sVMLMEQ2mBI2MtMt8bIAjQsUFv8IrEqyBw=,tag:kjsaNt4IUgptHW9EQgK/Rw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
-    version: 3.9.0
+    version: 3.9.3
 ---
 apiVersion: v1
 kind: Secret
@@ -537,6 +538,7 @@ data:
     tls.key: ENC[AES256_GCM,data:+WELpbjtuVS8EmI=,iv:1GtWQW/xv40E1ud0IMvQwJgndECWZVjfFvjApuD6AG8=,tag:kyZDmcIaic10bhJkAc8goQ==,type:str]
 metadata:
     name: prod-tls
+    namespace: default
 type: kubernetes.io/tls
 sops:
     kms: []
@@ -553,12 +555,13 @@ sops:
             YXBkN3hoTDBhNFlnL0E3QXJzWWsvNVkK5KWG0DaTK1t57H9hJxdNoujIoL+Mrij5
             EhgjkrMfqbz+KmWcvnYwJs1nmthscEDyGGMUXQ2Pc3GpqahDSTJtGg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-07-04T13:48:20Z"
-    mac: ENC[AES256_GCM,data:HHfd96ET1M+W42NWq0L3Pia69qEB5B6WHgKD5FIGIVwpG/gpPSxDorOFA1lBqdHpkFExH5bvRnBOl72ZIkMs5MwVK9jm+YkIRsd5NpgiaXHQjEGsBuE1IqHrbGC4Q5qON4VtseFqL03StgCWCIpBMEo6VZp6XI++ByuWdkPSkeA=,iv:ly6mCmTfk1ND0NutIA5aLEF/iwQj4ooKcmEPzPRD++0=,tag:11Sv7MJ4ZNOWLXCtABOsZQ==,type:str]
+    lastmodified: "2025-01-22T22:14:19Z"
+    mac: ENC[AES256_GCM,data:D7uLrzR6lq0YGnmnBBlSLFLTNyA61p9oEp11tYafRA2fRxH6T8QgvkU1EbpwurZqpLe0bMtJePA2An0gZAPzYcbwrJfwzL/EEyvAEI82akd8qjbwm1YcBb/X2wdCYPJrWlzMB7hxLttzvdzLarkLYTGB2L9HvOh1/0SKTSvf2kI=,iv:A0TIl/k49sVMLMEQ2mBI2MtMt8bIAjQsUFv8IrEqyBw=,tag:kjsaNt4IUgptHW9EQgK/Rw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
-    version: 3.9.0</code></pre></div></div>
-<aside class="notes"><div class="paragraph"><p>Si on fait du Kubernetes, il arrive que l&#8217;on déclare parfois plusieurs ressources dans un même fichier YAML</p></div></aside></div></section>
+    version: 3.9.3</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Si on fait du Kubernetes, il arrive que l&#8217;on déclare parfois plusieurs ressources dans un même fichier YAML</p></div>
+<div class="paragraph"><p>SOPS chiffre de manière individuelle chaque document YAML</p></div></aside></div></section>
 <section id="_démo" class="transparency"><h2>Démo</h2><div class="slide-content"><div class="paragraph"><p><code>./demo.sh</code></p></div>
 <aside class="notes"><div class="paragraph"><p>~5min</p></div>
 <div class="paragraph"><p>DEMO-20.SH !!!</p></div></aside></div></section>
@@ -570,7 +573,9 @@ index be346d4..7210f74 100644
 @@ -1,21 +1,21 @@
 -password: ENC[AES256_GCM,data:EuHISKWakII=,iv:1i5ZMWseSJpcZoPdkdhNHaytlapMD5J4MmYJDSjPetA=,tag:SleSVvjR9arBbVIpUeFC5Q==,type:str]
 +password: ENC[AES256_GCM,data:RlVe+IAXalyz75NeVqsS64gqRQ==,iv:dq/Yd+25rH2a9pXHYMQ4Qs1qxDPcO5JCIL1TlT+yxG4=,tag:Es0gSsnabjyx4UcHiN91eA==,type:str]
-[...]</code></pre></div></div></div></section><section id="_pas_très_lisible_tout_ça_2" data-auto-animate><h2>Pas très lisible tout ça ?</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-line-numbers="1|2,3|10,11" data-lang="shell">$ git config diff.sopsdiffer.textconv "sops -d"
+[...]</code></pre></div></div><aside class="notes"><div class="paragraph"><p>Développeur qui pousse une modification de secret chiffré pour remplacer un mot de passe, contrôle de PR, &#8230;&#8203;</p></div>
+<div class="paragraph"><p>On veut quelques choses de simple pour consulter le diff sans avoir à récuéprer et déchiffrer chaque fichier individuellement.</p></div>
+<div class="paragraph"><p>Est-ce qu&#8217;on peut pas s&#8217;appuyer sur un outil existant pour ça ?</p></div></aside></div></section><section id="_pas_très_lisible_tout_ça_2" data-auto-animate><h2>Pas très lisible tout ça ?</h2><div class="slide-content"><div class="listingblock"><div class="content"><pre class="highlightjs highlight"><code class="language-shell hljs" data-noescape="true" data-line-numbers="1|2,3|10,11" data-lang="shell">$ git config diff.sopsdiffer.textconv "sops -d"
 $ cat .gitattributes
 code/recipients/example-diff-secrets.yaml diff=sopsdiffer
 $ git diff 34526..3933
@@ -581,7 +586,8 @@ index be346d4..7210f74 100644
 @@ -1 +1 @@
 -password: password
 +password: ThisIsARealPassword</code></pre></div></div>
-<aside class="notes"><div class="paragraph"><p>Bien évidemment, uniquement possible si vous avez accès au fichier, et à ne pas exposer partout !</p></div></aside></div></section></section>
+<aside class="notes"><div class="ulist"><ul><li><p>Filtre Git
+Bien évidemment, uniquement possible si vous avez accès au fichier, et à ne pas exposer partout !</p></li></ul></div></aside></div></section></section>
 <section id="_conclusion" class="columns transparency"><h2>Conclusion</h2><div class="slide-content"><div class="openblock column"><div class="content"><div id="recap" class="imageblock"><img src="images/02-recapitulatif.svg" alt="Diagram"></div></div></div>
 <div class="openblock column fragment"><div class="content"><div class="imageblock"><a class="image" href="https://registry.terraform.io/providers/carlpett/sops/latest/docs"><img src="images/terraform_logo.svg" alt="Terraform" height="100"></a></div>
 <div class="imageblock"><a class="image" href="https://docs.ansible.com/ansible/latest/collections/community/sops/index.html"><img src="images/ansible_logo.png" alt="Ansible" height="100"></a></div>
@@ -594,7 +600,8 @@ index be346d4..7210f74 100644
 - Alternative pour ceux qui ne veulent pas manager un Vault
 - Limite : Encrypting with SSH keys via age is not yet supported by SOPS.
 - <a href="https://taras.glek.net/post/github-to-sops-lighter-weight-secret-management/" class="bare">https://taras.glek.net/post/github-to-sops-lighter-weight-secret-management/</a></p></div></aside></div></section>
-<section id="_sponsors" data-background-image="images/snowcamp/sponsors.png" data-background-size="contain"></section>
+<section id="_sponsors" data-background-image="images/snowcamp/sponsors.png" data-background-size="contain"><div class="slide-content">
+<aside class="notes"><div class="paragraph"><p>Merci aux sponsors de cette édition, sans qui rien cette conf n&#8217;aurait pu avoir lieu !</p></div></aside></div></section>
 <section id="_merci" class="columns transparency is-vcentered" data-background-image="images/devoxx/DevoxxFR2024_0044.jpg" data-background-size="fill"><div class="slide-content">
 <div class="openblock column"><div class="content"><div class="imageblock"><img src="images/slides_link.svg" alt="Slides" height="300"></div><div class="title">Slides</div></div></div>
 <div class="openblock column"><div class="content"><div class="paragraph"><p><a href="https://sylvain.dev"><strong>sylvain.dev</strong></a></p></div></div></div>
