@@ -70,8 +70,8 @@ cp envs/secrets.dev.yaml envs/secrets.dev.yaml.bck
 p "Il souhaite mettre à jour le nom d'utilisateur"
 pe "sed -i 's/admin/super_admin/' envs/secrets.dev.yaml"
 
-p "Ligne modifiée, fichier commit / push, et quelques jours plus tard, on souhaite mettre à jour le secret..."
-pe "sops envs/secrets.dev.yaml || true"
+p "Ligne modifiée, fichier commit / push, et quelques jours plus tard, on souhaite accéder au secret..."
+pe "sops -d envs/secrets.dev.yaml || true"
 
 wait
 clear
