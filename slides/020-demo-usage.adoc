@@ -32,6 +32,15 @@ index be346d4..7210f74 100644
 [...]
 ----
 
+[.notes]
+****
+Développeur qui pousse une modification de secret chiffré pour remplacer un mot de passe, contrôle de PR, ...
+
+On veut quelques choses de simple pour consulter le diff sans avoir à récuéprer et déchiffrer chaque fichier individuellement.
+
+Est-ce qu'on peut pas s'appuyer sur un outil existant pour ça ?
+****
+
 [%auto-animate]
 === Pas très lisible tout ça ?
 
@@ -52,5 +61,6 @@ index be346d4..7210f74 100644
 
 [.notes]
 ****
+- Filtre Git
 Bien évidemment, uniquement possible si vous avez accès au fichier, et à ne pas exposer partout !
 ****

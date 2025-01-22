@@ -41,4 +41,6 @@ include::../code/tls.k8s_secret.yaml[]
 [.notes]
 ****
 Si on fait du Kubernetes, il arrive que l'on déclare parfois plusieurs ressources dans un même fichier YAML
+
+SOPS chiffre de manière individuelle chaque document YAML
 ****

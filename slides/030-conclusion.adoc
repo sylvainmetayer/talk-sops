@@ -39,6 +39,11 @@ Permet de stocker les secrets avec le code source de manière sécurisée
 
 image::snowcamp/sponsors.png[background, size=contain]
 
+[.notes]
+****
+Merci aux sponsors de cette édition, sans qui rien cette conf n'aurait pu avoir lieu !
+****
+
 [.columns.transparency%notitle.is-vcentered]
 == Merci !
 
