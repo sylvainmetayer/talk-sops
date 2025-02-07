@@ -2,7 +2,7 @@ include::021-chiffrement.adoc[]
 
 include::022-destinataires.adoc[]
 
-include::023-yaml-documents.adoc[]
+// include::023-yaml-documents.adoc[]
 
 [.transparency]
 == Démo
@@ -19,7 +19,7 @@ DEMO-20.SH !!!
 [%auto-animate]
 == Pas très lisible tout ça ?
 
-[%linenums,text,highlight=7-8]
+[source,shell,%linenums,highlight=7-8]
 ----
 $ git diff 34526..3933
 diff --git a/code/recipients/example-diff-secrets.yaml b/code/recipients/example-diff-secrets.yaml
@@ -44,7 +44,7 @@ Est-ce qu'on peut pas s'appuyer sur un outil existant pour ça ?
 [%auto-animate]
 === Pas très lisible tout ça ?
 
-[%linenums,shell,highlight=1|2-3|10-11]
+[source,shell,%linenums,highlight=1|2-3|10-11]
 ----
 $ git config diff.sopsdiffer.textconv "sops -d"
 $ cat .gitattributes

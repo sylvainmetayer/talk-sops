@@ -4,7 +4,7 @@
 .file.yml
 [source%linenums,yaml,data-id=sample-sops]
 ----
-password: a secure password for SnowCamp !
+password: a secure password for TNT !
 ----
 
 [%auto-animate]

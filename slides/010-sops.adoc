@@ -41,7 +41,7 @@ Chiffrement avec link:https://github.com/FiloSottile/age[age]footnote:[Mais auss
 --
 Exemple de clé age
 
-[source,bash]
+[source,shell]
 ----
 $ age-keygen
 # created: 2024-03-08T15:17:28+01:00

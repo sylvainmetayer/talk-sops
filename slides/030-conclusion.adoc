@@ -34,20 +34,10 @@ Permet de stocker les secrets avec le code source de manière sécurisée
 - https://taras.glek.net/post/github-to-sops-lighter-weight-secret-management/
 ****
 
-[%notitle]
-== Sponsors
-
-image::snowcamp/sponsors.png[background, size=contain]
-
-[.notes]
-****
-Merci aux sponsors de cette édition, sans qui rien cette conf n'aurait pu avoir lieu !
-****
-
 [.columns.transparency%notitle.is-vcentered]
 == Merci !
 
-image::devoxx/DevoxxFR2024_0044.jpg[background, size=fill]
+image::tnt/background.png[background, size=fill]
 
 [.column]
 --
@@ -63,9 +53,10 @@ link:https://sylvain.dev[*sylvain.dev*]
 
 [.column]
 --
-[caption=]
-.Vos retours
-image::openfeedback.svg[height=300,alt='Vos retours']
+Openfeedback
+//[caption=]
+//.Faites des retours dans l'appli !
+//image::openfeedback.svg[height=300,alt='Vos retours']
 --
 
 [.notes]

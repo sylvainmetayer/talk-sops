@@ -2,6 +2,7 @@
 :docinfo: private
 :source-highlighter: highlight.js
 :highlightjs-theme: js/highlight/styles/base16/solarized-light.min.css
+:highlightjs-languages: yaml,bash,shell,ini
 :highlightjsdir: js/highlight
 :autofit-option:
 :icons!:
@@ -12,7 +13,7 @@
 :revealjs_history: true
 :revealjs_pdfseparatefragments: false
 :revealjs_width: 1200
-:title-slide-background-image: snowcamp/background2.png
+:title-slide-background-image: tnt/background.png
 :title-slide-background-repeat: repeat
 :title-slide-background-size: auto
 // //:title-slide-filter: blur(4px)

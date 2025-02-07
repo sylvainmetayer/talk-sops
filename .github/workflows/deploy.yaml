@@ -1,13 +1,17 @@
 name: Build and deploy latest version
+
 on:
   push:
     branches:
       - main
+
 permissions:
   contents: write
+
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -21,7 +25,7 @@ jobs:
       - name: Install and Build 🔧
         uses: addnab/docker-run-action@v3
         with:
-          image: asciidoctor/docker-asciidoctor:1.67
+          image: asciidoctor/docker-asciidoctor:1.82
           options: -v ${{ github.workspace }}:/documents
           run: |
             gem install asciidoctor-revealjs --pre 
