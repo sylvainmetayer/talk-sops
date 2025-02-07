@@ -29,9 +29,20 @@
     letter-spacing: normal;
 }
 
+
+footer {
+    z-index: 10;
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    bottom: -30px;
+    min-height: 80px;
+    text-align: center;
+}
+
 body::after {
-    background-color: rgba(0, 0, 0, 0.1);
-    content: url("../images/snowcamp/logo2.png");
+    /*background-color: rgba(0, 0, 0, 0.1);*/
+    content: url("../images/tnt/logo.png");
     position: fixed;
     left: 10px;
     bottom: 10px;
