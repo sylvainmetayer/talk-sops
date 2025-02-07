@@ -1,4 +1,4 @@
-= SOPS, passez un savon à vos secrets en clair !
+= SOPS (de prêt), passez un savon à vos secrets en clair !
 :docinfo: private
 :source-highlighter: highlight.js
 :highlightjs-theme: js/highlight/styles/base16/solarized-light.min.css
