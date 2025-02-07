@@ -53,10 +53,9 @@ link:https://sylvain.dev[*sylvain.dev*]
 
 [.column]
 --
-Openfeedback
-//[caption=]
-//.Faites des retours dans l'appli !
-//image::openfeedback.svg[height=300,alt='Vos retours']
+[caption=]
+.Openfeedback
+image::openfeedback.svg[height=300,alt='Vos retours']
 --
 
 [.notes]
