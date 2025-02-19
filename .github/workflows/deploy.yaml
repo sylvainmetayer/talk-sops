@@ -39,7 +39,7 @@ jobs:
           cp -r reveal.js/plugin build/reveal.js/
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.7.2
+        uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
           folder: build
           branch: gh-pages
