@@ -28,7 +28,8 @@ jobs:
           image: asciidoctor/docker-asciidoctor:1.82
           options: -v ${{ github.workspace }}:/documents
           run: |
-            gem install asciidoctor-revealjs --pre 
+            gem install asciidoctor-revealjs --pre
+            sed -i 's,^:base_url: .*,:base_url: https://sops.talks.sylvain.dev,' index.adoc
             asciidoctor-revealjs -r asciidoctor-diagram /documents/index.adoc
 
       - name: Copy build to folder 📦

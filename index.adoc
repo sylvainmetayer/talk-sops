@@ -1,4 +1,6 @@
-= SOPS (de près), passez un savon à vos secrets en clair !
+= SOPS, passez un savon à vos secrets en clair !
+:base_url: http://localhost:8000
+:links_url: /links.html
 :docinfo: private
 :source-highlighter: highlight.js
 :highlightjs-theme: js/highlight/styles/base16/solarized-light.min.css
@@ -13,7 +15,7 @@
 :revealjs_history: true
 :revealjs_pdfseparatefragments: false
 :revealjs_width: 1200
-:title-slide-background-image: tnt/background.png
+:title-slide-background-image: background.png
 :title-slide-background-repeat: repeat
 :title-slide-background-size: auto
 // //:title-slide-filter: blur(4px)

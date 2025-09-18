@@ -37,7 +37,7 @@ footer {
 
 body::after {
     /*background-color: rgba(0, 0, 0, 0.1);*/
-    content: url("../images/tnt/logo.png");
+    content: url("../images/bdxio/logo-couleur.png");
     position: fixed;
     left: 10px;
     bottom: 10px;

@@ -37,25 +37,18 @@ Permet de stocker les secrets avec le code source de manière sécurisée
 [.columns.transparency%notitle.is-vcentered]
 == Merci !
 
-image::tnt/background.png[background, size=fill]
+image::background.png[background, size=fill]
 
 [.column]
 --
 [caption=]
-.Slides
-image::slides_link.svg[height=300,alt='Slides']
+.Liens
+qrcode::{base_url}{links_url}[height=300,alt='Liens',format="png", xdim=4]
 --
 
 [.column]
 --
 link:https://sylvain.dev[*sylvain.dev*]
---
-
-[.column]
---
-[caption=]
-.Openfeedback
-image::openfeedback.svg[height=300,alt='Vos retours']
 --
 
 [.notes]
