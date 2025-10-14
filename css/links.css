@@ -1,0 +1,73 @@
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url("/images/cloud-toulouse/background.png");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.bulle {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+    margin: 20px;
+}
+
+.bulles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+header {
+    text-align: center;
+    margin: 5%;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        margin: 5%;
+    }
+
+    .bulle {
+        width: 90%;
+        height: auto;
+        position: relative;
+    }
+
+    .bulles {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0px 0px;
+        justify-items: center;
+        align-items: center;
+        margin-top: 30%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .bulle {
+        position: relative;
+    }
+
+    .bulles {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0px 0px;
+        justify-items: center;
+        align-items: center;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
