@@ -1,5 +1,5 @@
 @startuml
-skinparam handwritten true
+!option handwritten true
 
 title Déploiement d'une application
 

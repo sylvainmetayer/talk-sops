@@ -42,7 +42,7 @@ image::background.png[background, size=fill]
 [.column]
 --
 [caption=]
-.Liens
+.link:{base_url}{links_url}[Liens]
 qrcode::{base_url}{links_url}[height=300,alt='Liens',format="png", xdim=4]
 --
 
