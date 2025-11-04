@@ -30,7 +30,7 @@ jobs:
           run: |
             gem install asciidoctor-revealjs --pre
             sed -i 's,^:base_url: .*,:base_url: https://sops.talks.sylvain.dev,' index.adoc
-            sed -i 's,SLIDES_LINK,https://sops.talks.sylvain.dev/,' link.html
+            sed -i 's,SLIDES_LINK,https://sops.talks.sylvain.dev/,' links.html
             asciidoctor-revealjs -r asciidoctor-diagram /documents/index.adoc
 
       - name: Copy build to folder 📦
