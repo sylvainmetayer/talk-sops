@@ -39,14 +39,14 @@ Permet de stocker les secrets avec le code source de manière sécurisée
 
 image::background.png[background, size=fill]
 
-[.column]
+[.column,id=qrcode]
 --
 [caption=]
 .link:{base_url}{links_url}[Liens]
 qrcode::{base_url}{links_url}[height=300,alt='Liens',format="png", xdim=4]
 --
 
-[.column]
+[.column,id=website]
 --
 link:https://sylvain.dev[*sylvain.dev*]
 --

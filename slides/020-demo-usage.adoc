@@ -7,6 +7,9 @@ include::022-destinataires.adoc[]
 [.transparency]
 == Démo
 
+image::bdxio/bridge-background-blue-large.png[background, size=fill]
+
+[#demo]
 `./demo.sh`
 
 [.notes]
